@@ -1,0 +1,24 @@
+<h3>{{title}}</h3>
+
+<div>
+    <input [(ngModel)]="inputtext">
+</div>
+<div>
+    <span>{{inputtext}}</span>
+</div>
+<div>
+    <input [value]="inputtext">
+</div>
+<p></p>
+<button
+    (click)="log('Button clicked')"
+    (mouseleave)="log('Mouse left button')"
+    (mouseover)="log('Mouse over button')">
+    Button
+</button>
+<p></p>
+<div>
+    <ul>
+        <li *ngFor="#msg of messages">{{msg}}</li>
+    </ul>    
+</div>
