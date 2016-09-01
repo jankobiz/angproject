@@ -15,6 +15,8 @@ var AppComponent = (function () {
         this.inputtext = 'This is default text';
         this.anothertext = 'Another default text';
         this.messages = [];
+        this.divcolor = "white";
+        this.bckdivcolor = "darkred";
         this.title = 'Angular 2 Binding Events';
     }
     AppComponent.prototype.log = function (msg, data) {
@@ -22,6 +24,7 @@ var AppComponent = (function () {
         this.messages.splice(0, 0, msg + " " + this.timesClicked);
         console.log(msg);
         if (data) {
+            console.log(data);
         }
     };
     AppComponent = __decorate([

@@ -11,6 +11,8 @@ export class AppComponent {
     inputtext = 'This is default text';
     anothertext = 'Another default text';
     messages: string [] = [];
+    divcolor = "white";
+    bckdivcolor = "darkred";
     constructor() {
         this.title = 'Angular 2 Binding Events'
     }
