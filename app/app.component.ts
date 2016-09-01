@@ -19,6 +19,7 @@ export class AppComponent {
         this.messages.splice(0,0, msg + " " + this.timesClicked);
         console.log(msg);
         if(data){
+            console.log(data);
         }
     }
 }
