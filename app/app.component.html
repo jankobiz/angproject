@@ -10,6 +10,21 @@
     <input [value]="inputtext">
 </div>
 <p></p>
+<div>
+    <ul>
+        <li *ngFor='#vehicle of vehicles'>
+            {{vehicle.id}}, {{vehicle.brand}}, {{vehicle.model}}, {{vehicle.color}} 
+        </li>
+        <p></p>
+        <li *ngFor='let vehicle of vehicles'>
+            {{vehicle.id}}, {{vehicle.brand}}, {{vehicle.model}}, {{vehicle.color}} 
+        </li>
+    </ul>
+    <!--<div *ngIf="vehicles.length">
+        <h3>You have {{vehicles.length}} vehicles</h3>
+    </div>-->
+</div>
+<p></p>
 <button
     [style.color]="divcolor"
     [style.background-color]="bckdivcolor"
@@ -22,5 +37,5 @@
 <div>
     <ul>
         <li *ngFor="#msg of messages">{{msg}}</li>
-    </ul>    
+    </ul>
 </div>

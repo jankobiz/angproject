@@ -9,11 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var app_mock_vehicles_1 = require('./app.mock-vehicles');
 var AppService = (function () {
     function AppService() {
-        this.getData = function () {
-        };
+        this.getVehicles1 = function () { return [
+            { id: 1, name: 'X-Wing Fighter' },
+            { id: 2, name: 'Tie Fighter' },
+            { id: 3, name: 'Y-Wing Fighter' }
+        ]; };
     }
+    AppService.prototype.getVehicles = function () {
+        return app_mock_vehicles_1.VEHICLES;
+    };
+    AppService.prototype.getVehiclesPromise = function () {
+        return Promise.resolve(app_mock_vehicles_1.VEHICLES);
+    };
     AppService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

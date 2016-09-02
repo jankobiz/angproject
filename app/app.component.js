@@ -9,8 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var app_service_1 = require('./app.service');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(_vehicleServis) {
+        this._vehicleServis = _vehicleServis;
         this.timesClicked = 0;
         this.inputtext = 'This is default text';
         this.anothertext = 'Another default text';
@@ -18,6 +20,7 @@ var AppComponent = (function () {
         this.divcolor = "white";
         this.bckdivcolor = "darkred";
         this.title = 'Angular 2 Binding Events';
+        this.vehicles = this._vehicleServis.getVehicles();
     }
     AppComponent.prototype.log = function (msg, data) {
         this.timesClicked += 1;
@@ -27,12 +30,20 @@ var AppComponent = (function () {
             console.log(data);
         }
     };
+    AppComponent.prototype.getVihacles = function () {
+        var _this = this;
+        this._vehicleServis.getVehiclesPromise().then(function (vehicles) { return _this.vehicles = vehicles; });
+    };
+    AppComponent.prototype.OnInit = function () {
+        this.getVihacles;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            templateUrl: 'app/app.component.html'
+            templateUrl: 'app/app.component.html',
+            providers: [app_service_1.AppService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [app_service_1.AppService])
     ], AppComponent);
     return AppComponent;
 }());
