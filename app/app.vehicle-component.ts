@@ -5,7 +5,7 @@ import { Vehicle } from './app.vehicle';
 import {VehicleComponent} from './app.selected-vehicle';
 
 @Component ({
-    selector: 'my-app',
+    selector: 'vehicle-list',
     templateUrl: 'app/app.vehicle-component.html',
     styleUrls: ['./app/app.vehicle.component.css'],
     directives: [VehicleComponent],

@@ -50,7 +50,7 @@ var AppVehicle = (function () {
     ], AppVehicle.prototype, "selected", void 0);
     AppVehicle = __decorate([
         core_1.Component({
-            selector: 'my-app',
+            selector: 'vehicle-list',
             templateUrl: 'app/app.vehicle-component.html',
             styleUrls: ['./app/app.vehicle.component.css'],
             directives: [app_selected_vehicle_1.VehicleComponent],
