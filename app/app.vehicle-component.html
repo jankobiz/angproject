@@ -1,0 +1,43 @@
+<h3>{{title}}</h3>
+
+<div>
+    <input [(ngModel)]="inputtext">
+</div>
+<div>
+    <span>{{inputtext}}</span>
+</div>
+<div>
+    <input [value]="inputtext">
+</div>
+<p></p>
+<div>
+    <ul class="vehicles">        
+        <p></p>
+        <li *ngFor='let vehicle of vehicles'>
+            <div (click)="select(vehicle)"
+                [class.selected]="vehicle===selectedVehicle">
+                {{vehicle.id}}, {{vehicle.brand}}, {{vehicle.model}}, {{vehicle.color}}
+            </div>
+            <div style="margin-top:5px"></div>
+        </li>
+    </ul>
+    <div *ngIf="vehicles.length">
+        <h3>You have {{vehicles.length}} vehicles</h3>
+    </div>    
+    <selected-vehicle [vehicleselected]="selectedVehicle"></selected-vehicle>
+</div>
+<p></p>
+<button
+    [style.color]="divcolor"
+    [style.background-color]="bckdivcolor"
+    (click)="log('Button clicked')"
+    (mouseleave)="log('Mouse left button')"
+    (mouseover)="log('Mouse over button')">
+    Button
+</button>
+<p></p>
+<div>
+    <ul>
+        <li *ngFor="let msg of messages">{{msg}}</li>
+    </ul>
+</div>
