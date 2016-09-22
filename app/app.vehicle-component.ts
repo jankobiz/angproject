@@ -12,7 +12,7 @@ import {VehicleComponent} from './app.selected-vehicle';
     providers: [AppService]
 })
 
-export class AppVehicle {
+export class VehicleList {
     @Output() selected = new EventEmitter<Vehicle>();
     title: string;
     timesClicked: number = 0;
