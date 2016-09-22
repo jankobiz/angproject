@@ -9,20 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MainApp = (function () {
-    function MainApp() {
+var app_vehicle_1 = require('./app.vehicle');
+var VehicleComponent = (function () {
+    function VehicleComponent() {
     }
-    MainApp.prototype.notice = function (selectedVihacle) {
-    };
-    MainApp = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', app_vehicle_1.Vehicle)
+    ], VehicleComponent.prototype, "vehicleselected", void 0);
+    VehicleComponent = __decorate([
         core_1.Component({
-            selector: 'main-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['./app/app.component.css'],
+            selector: 'selected-vehicle',
+            template: "<h3 *ngIf=\"vehicleselected\">You selected {{vehicleselected.id}}. {{vehicleselected.model}}</h3>"
         }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], VehicleComponent);
+    return VehicleComponent;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=app.component.js.map
+exports.VehicleComponent = VehicleComponent;
+//# sourceMappingURL=app.selected-vehicle.1.js.map
