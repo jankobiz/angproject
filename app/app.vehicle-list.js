@@ -41,8 +41,12 @@ var VehicleList = (function () {
     };
     VehicleList.prototype.select = function (selectedVihacle) {
         this.selectedVehicle = selectedVihacle;
-        //this.selected.emit(selectedVihacle);
+        this.selected.emit(selectedVihacle);
         console.log("Clicked on a vehicle " + selectedVihacle.model);
+    };
+    VehicleList.prototype.onVehicleselected = function (message) {
+        //this.title = 'Product list: ' + message;
+        console.log('Vehicle that is selected: ' + message);
     };
     __decorate([
         core_1.Output(), 
@@ -51,8 +55,8 @@ var VehicleList = (function () {
     VehicleList = __decorate([
         core_1.Component({
             selector: 'vehicle-list',
-            templateUrl: 'app/app.vehicle-component.html',
-            styleUrls: ['./app/app.vehicle.component.css'],
+            templateUrl: 'app/app.vehicle-list.html',
+            styleUrls: ['./app/app.vehicle-list.css'],
             directives: [app_selected_vehicle_1.VehicleComponent],
             providers: [app_service_1.AppService]
         }), 
@@ -61,4 +65,4 @@ var VehicleList = (function () {
     return VehicleList;
 }());
 exports.VehicleList = VehicleList;
-//# sourceMappingURL=app.vehicle-component.js.map
+//# sourceMappingURL=app.vehicle-list.js.map

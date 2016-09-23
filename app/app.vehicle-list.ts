@@ -6,14 +6,14 @@ import {VehicleComponent} from './app.selected-vehicle';
 
 @Component ({
     selector: 'vehicle-list',
-    templateUrl: 'app/app.vehicle-component.html',
-    styleUrls: ['./app/app.vehicle.component.css'],
+    templateUrl: 'app/app.vehicle-list.html',
+    styleUrls: ['./app/app.vehicle-list.css'],
     directives: [VehicleComponent],
     providers: [AppService]
 })
 
 export class VehicleList {
-    @Output() selected = new EventEmitter<Vehicle>();
+    @Output() selected = new EventEmitter<Vehicle>();     
     title: string;
     timesClicked: number = 0;
     inputtext = 'This is default text';
@@ -44,7 +44,11 @@ export class VehicleList {
     }
     select (selectedVihacle: Vehicle) {
         this.selectedVehicle=selectedVihacle;
-        //this.selected.emit(selectedVihacle);
+        this.selected.emit(selectedVihacle);
         console.log("Clicked on a vehicle " + selectedVihacle.model);
+    }
+    onVehicleselected(message: string) {
+        //this.title = 'Product list: ' + message;
+        console.log('Vehicle that is selected: ' + message);
     }
 }

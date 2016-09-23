@@ -24,7 +24,7 @@
     <div *ngIf="vehicles.length">
         <h3>You have {{vehicles.length}} vehicles</h3>
     </div>    
-    <selected-vehicle [vehicleselected]="selectedVehicle"></selected-vehicle>
+    <selected-vehicle [vehicleselected]="selectedVehicle" (vehicleClicked)='onVehicleselected($event)'></selected-vehicle>
 </div>
 <p></p>
 <button

@@ -12,15 +12,24 @@ var core_1 = require('@angular/core');
 var app_vehicle_1 = require('./app.vehicle');
 var VehicleComponent = (function () {
     function VehicleComponent() {
+        this.vehicleClicked = new core_1.EventEmitter();
     }
+    VehicleComponent.prototype.onClick = function () {
+        console.log('H3 selected vehicle has been clicked!');
+        this.vehicleClicked.emit("The vehicle " + this.vehicleselected.model + " was clicked!");
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', app_vehicle_1.Vehicle)
     ], VehicleComponent.prototype, "vehicleselected", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], VehicleComponent.prototype, "vehicleClicked", void 0);
     VehicleComponent = __decorate([
         core_1.Component({
             selector: 'selected-vehicle',
-            template: "<h3 *ngIf=\"vehicleselected\">You selected {{vehicleselected.id}}. {{vehicleselected.model}}</h3>"
+            templateUrl: 'app/app.selected-vehicle.html'
         }), 
         __metadata('design:paramtypes', [])
     ], VehicleComponent);
