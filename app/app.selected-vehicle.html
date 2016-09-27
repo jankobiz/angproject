@@ -1,6 +1,4 @@
-<h3 
-style="padding: 4px; cursor: pointer; background-color: #eaa;"
-(click)="onClick()"
-*ngIf="vehicleselected">
+<h3 style="padding: 4px; cursor: pointer; background-color: #eaa;" *ngIf="vehicleselected">
 You selected {{vehicleselected.id}}. {{vehicleselected.model}}
+<button (click)="onClick()">Selected</button>
 </h3>
