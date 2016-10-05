@@ -12,9 +12,17 @@ import { Vehicle } from './app.vehicle';
 export class VehicleComponent {
     @Input() vehicleselected: Vehicle;
     @Output() vehicleClicked: EventEmitter<string> = new EventEmitter<string>();
+    @Output() mouseOverButton: EventEmitter<Vehicle> = new EventEmitter<Vehicle>();
 
     onClick() {
         console.log('H3 selected vehicle has been clicked!');
         this.vehicleClicked.emit(`The vehicle ${this.vehicleselected.model} was clicked!`);  
+    }
+    onMouseOver() {
+        console.log('Trying another event listener');
+        this.mouseOverButton.emit(this.vehicleselected);
+    }
+    viewChildExample() {
+        console.log('Viewchild example is working! You have selected ' + this.vehicleselected.model);
     }
 }

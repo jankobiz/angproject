@@ -48,10 +48,18 @@ var VehicleList = (function () {
         //this.title = 'Product list: ' + message;
         console.log('Vehicle that is selected: ' + message);
     };
+    VehicleList.prototype.onMouseOverButtonEvent = function (vehicleObject) {
+        console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
+        this.viewChild.viewChildExample();
+    };
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], VehicleList.prototype, "selected", void 0);
+    __decorate([
+        core_1.ViewChild(app_selected_vehicle_1.VehicleComponent), 
+        __metadata('design:type', app_selected_vehicle_1.VehicleComponent)
+    ], VehicleList.prototype, "viewChild", void 0);
     VehicleList = __decorate([
         core_1.Component({
             selector: 'vehicle-list',

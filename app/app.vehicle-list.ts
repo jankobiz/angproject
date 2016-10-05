@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angular/core';
 import {AppService} from './app.service';
 
 import { Vehicle } from './app.vehicle';
@@ -13,7 +13,8 @@ import {VehicleComponent} from './app.selected-vehicle';
 })
 
 export class VehicleList {
-    @Output() selected = new EventEmitter<Vehicle>();     
+    @Output() selected = new EventEmitter<Vehicle>();
+    @ViewChild(VehicleComponent) viewChild: VehicleComponent;
     title: string;
     timesClicked: number = 0;
     inputtext = 'This is default text';
@@ -50,5 +51,9 @@ export class VehicleList {
     onVehicleselected(message: string) {
         //this.title = 'Product list: ' + message;
         console.log('Vehicle that is selected: ' + message);
+    }
+    onMouseOverButtonEvent(vehicleObject: Vehicle) {
+        console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
+        this.viewChild.viewChildExample();
     }
 }

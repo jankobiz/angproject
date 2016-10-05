@@ -13,10 +13,18 @@ var app_vehicle_1 = require('./app.vehicle');
 var VehicleComponent = (function () {
     function VehicleComponent() {
         this.vehicleClicked = new core_1.EventEmitter();
+        this.mouseOverButton = new core_1.EventEmitter();
     }
     VehicleComponent.prototype.onClick = function () {
         console.log('H3 selected vehicle has been clicked!');
         this.vehicleClicked.emit("The vehicle " + this.vehicleselected.model + " was clicked!");
+    };
+    VehicleComponent.prototype.onMouseOver = function () {
+        console.log('Trying another event listener');
+        this.mouseOverButton.emit(this.vehicleselected);
+    };
+    VehicleComponent.prototype.viewChildExample = function () {
+        console.log('Viewchild example is working! You have selected ' + this.vehicleselected.model);
     };
     __decorate([
         core_1.Input(), 
@@ -26,6 +34,10 @@ var VehicleComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], VehicleComponent.prototype, "vehicleClicked", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', core_1.EventEmitter)
+    ], VehicleComponent.prototype, "mouseOverButton", void 0);
     VehicleComponent = __decorate([
         core_1.Component({
             selector: 'selected-vehicle',

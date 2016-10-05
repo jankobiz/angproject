@@ -3,4 +3,5 @@ export class Vehicle {
     brand: string;
     model: string;
     color: string;
+    price: number;
 }
