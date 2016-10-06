@@ -1,5 +1,5 @@
 <h3 style="padding: 4px; cursor: pointer; background-color: #eaa;" *ngIf="vehicleselected">
 You selected {{vehicleselected.id}}. {{vehicleselected.model}}
 <button (click)="onClick()">Selected</button>
-<button (click)=onClickSecondButton()>Mouse over</button>
+<button (mouseover)=onMouseOver()>Mouse over</button>
 </h3>
