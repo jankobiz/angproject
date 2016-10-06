@@ -19,7 +19,7 @@ var VehicleComponent = (function () {
         console.log('H3 selected vehicle has been clicked!');
         this.vehicleClicked.emit("The vehicle " + this.vehicleselected.model + " was clicked!");
     };
-    VehicleComponent.prototype.onClickSecondButton = function () {
+    VehicleComponent.prototype.onMouseOver = function () {
         console.log('Trying another event listener');
         this.mouseOverButton.emit(this.vehicleselected);
     };
