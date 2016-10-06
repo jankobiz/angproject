@@ -18,7 +18,7 @@ export class VehicleComponent {
         console.log('H3 selected vehicle has been clicked!');
         this.vehicleClicked.emit(`The vehicle ${this.vehicleselected.model} was clicked!`);  
     }
-    onMouseOver() {
+    onClickSecondButton() {
         console.log('Trying another event listener');
         this.mouseOverButton.emit(this.vehicleselected);
     }
