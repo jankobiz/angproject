@@ -4,12 +4,16 @@ import {AppService} from './app.service';
 import { Vehicle } from './app.vehicle';
 import {VehicleComponent} from './app.selected-vehicle';
 
+import { SimplePipe } from './app.simple-pipe';
+import { MyPipe } from './app.custom-pipe';
+
 @Component ({
     selector: 'vehicle-list',
     templateUrl: 'app/app.vehicle-list.html',
     styleUrls: ['./app/app.vehicle-list.css'],
     directives: [VehicleComponent],
-    providers: [AppService]
+    providers: [AppService],
+    pipes: [SimplePipe, MyPipe]
 })
 
 export class VehicleList {
@@ -17,7 +21,7 @@ export class VehicleList {
     @ViewChild(VehicleComponent) viewChild: VehicleComponent;
     title: string;
     timesClicked: number = 0;
-    inputtext = 'This is default text';
+    inputtext = 'This is default text';    
     anothertext = 'Another default text';
     messages: string [] = [];
     divcolor = "white";
@@ -25,6 +29,7 @@ export class VehicleList {
     vehicles: Vehicle [];
     selectedVehicle: Vehicle;
     vehicles1: any;
+    filterInput: string = '';
     constructor(private _vehicleServis: AppService) {
         this.title = 'Angular 2 Binding Events';
         this.vehicles = this._vehicleServis.getVehicles();
