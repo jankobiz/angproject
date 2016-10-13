@@ -1,7 +1,7 @@
 import { Vehicle } from './app.vehicle';
 
 export const VEHICLES: Vehicle[] = [
-  {id: 1, brand: 'Mercedes', model: "E class", color: "white", price: 56000},
+  {id: 1, brand: 'Mercedes Toys', model: "E class", color: "white", price: 56000},
   {id: 2, brand: 'Ford', model: "Mondeo", color: "blue", price: 24000},
   {id: 3, brand: 'BMW', model: "M class", color: "red", price: 64000},
   {id: 4, brand: 'Opel', model: "Insignia", color: "black", price: 23000},
