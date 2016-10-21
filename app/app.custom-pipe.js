@@ -27,11 +27,12 @@ var MyPipe = (function () {
             console.log('Just first argument ' + args[0].toLocaleLowerCase());
         }
         //return args[0] ? transformed : value;                
-        return filter ? value.filter(function (veh) { return veh.brand.toLocaleLowerCase().indexOf(filter) !== -1; }) : value;
+        return filter ? value.filter(function (veh) {
+            return veh.brand.toLocaleLowerCase().indexOf(filter) !== -1;
+        }) : value;
         //return filter ? value.filter(function(vel) {
         //    return vel.model.toLocaleLowerCase().indexOf(filter) !== -1
-        //}) : value;
-        //return result;
+        //}) : value;        
     };
     MyPipe = __decorate([
         core_1.Pipe({

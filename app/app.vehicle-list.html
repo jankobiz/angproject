@@ -29,13 +29,14 @@
             <div style="margin-top:5px"></div>
         </li>
     </ul>
+    <button (click)=remove()>Remove component</button>
     <div *ngIf="vehicles.length">
         <h3>You have {{vehicles.length}} vehicles</h3>
     </div>
-    <selected-vehicle [vehicleselected]="selectedVehicle"
+    <selected-vehicle *ngIf="selectedVehicle" 
+        [vehicleselected]="selectedVehicle"
         (vehicleClicked)='onVehicleselected($event)'
-        (mouseOverButton)='onMouseOverButtonEvent($event)'
-    
+        (mouseOverButton)='onMouseOverButtonEvent($event)'    
     ></selected-vehicle>
 </div>
 <p></p>

@@ -25,7 +25,7 @@ var VehicleList = (function () {
         this.bckdivcolor = "darkred";
         this.filterInput = '';
         this.title = 'Angular 2 Binding Events';
-        this.vehicles = this._vehicleServis.getVehicles();
+        //this.vehicles = this._vehicleServis.getVehicles();
     }
     VehicleList.prototype.log = function (msg, data) {
         this.timesClicked += 1;
@@ -39,8 +39,8 @@ var VehicleList = (function () {
         var _this = this;
         this._vehicleServis.getVehiclesPromise().then(function (vehicles) { return _this.vehicles = vehicles; });
     };
-    VehicleList.prototype.OnInit = function () {
-        this.getVihacles;
+    VehicleList.prototype.ngOnInit = function () {
+        this.vehicles = this._vehicleServis.getVehicles();
     };
     VehicleList.prototype.select = function (selectedVihacle) {
         this.selectedVehicle = selectedVihacle;
@@ -54,6 +54,9 @@ var VehicleList = (function () {
     VehicleList.prototype.onMouseOverButtonEvent = function (vehicleObject) {
         console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
         this.viewChild.viewChildExample();
+    };
+    VehicleList.prototype.remove = function () {
+        this.selectedVehicle = null;
     };
     __decorate([
         core_1.Output(), 
