@@ -14,6 +14,7 @@ var VehicleComponent = (function () {
     function VehicleComponent() {
         this.vehicleClicked = new core_1.EventEmitter();
         this.mouseOverButton = new core_1.EventEmitter();
+        this.onLifeCycleHookEvent = new core_1.EventEmitter();
     }
     VehicleComponent.prototype.onClick = function () {
         console.log('H3 selected vehicle has been clicked!');
@@ -25,6 +26,22 @@ var VehicleComponent = (function () {
     };
     VehicleComponent.prototype.viewChildExample = function () {
         console.log('Viewchild example is working! You have selected ' + this.vehicleselected.model);
+    };
+    VehicleComponent.prototype.ngAfterViewInit = function () {
+        console.log('This is AFTER VIEW EVENT!');
+        this.onLifeCycleHookEvent.emit('After View Event Emitted!');
+    };
+    VehicleComponent.prototype.ngOnInit = function () {
+        console.log('This is ON INIT EVENT!');
+    };
+    VehicleComponent.prototype.ngOnChanges = function () {
+        //console.log(`New vehichle ${this.vehicleselected.model} is selected`);
+        //console.log(`New vehichle ${this.vehicleselected.model} was selected!`);
+        //console.log('New vehichle selected - ' + this.vehicleselected.model);
+        console.log('New vehichle selected!');
+    };
+    VehicleComponent.prototype.ngOnDestroy = function () {
+        console.log('Component destroyed!');
     };
     __decorate([
         core_1.Input(), 
@@ -38,6 +55,10 @@ var VehicleComponent = (function () {
         core_1.Output(), 
         __metadata('design:type', core_1.EventEmitter)
     ], VehicleComponent.prototype, "mouseOverButton", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], VehicleComponent.prototype, "onLifeCycleHookEvent", void 0);
     VehicleComponent = __decorate([
         core_1.Component({
             selector: 'selected-vehicle',

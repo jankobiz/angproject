@@ -10,7 +10,7 @@
     <span>{{inputtext | simplePipe}}</span>
 </div>
 <div>
-    <input [(ngModel)]="filterInput">
+    <input [(ngModel)]='filterInput'>
 </div>
 <div class='row'>
     <div class='col-md-6'>
@@ -19,7 +19,7 @@
 </div>
 <p></p>
 <div>
-    <ul class="vehicles">        
+    <ul class="vehicles">
         <p></p>
         <li *ngFor='let vehicle of vehicles | myPipe:filterInput'>
             <div (click)="select(vehicle)"
@@ -29,13 +29,14 @@
             <div style="margin-top:5px"></div>
         </li>
     </ul>
+    <button (click)=remove()>Remove component</button>
     <div *ngIf="vehicles.length">
         <h3>You have {{vehicles.length}} vehicles</h3>
-    </div>    
-    <selected-vehicle [vehicleselected]="selectedVehicle"
+    </div>
+    <selected-vehicle *ngIf="selectedVehicle" 
+        [vehicleselected]="selectedVehicle"
         (vehicleClicked)='onVehicleselected($event)'
-        (mouseOverButton)='onMouseOverButtonEvent($event)'
-    
+        (mouseOverButton)='onMouseOverButtonEvent($event)'    
     ></selected-vehicle>
 </div>
 <p></p>

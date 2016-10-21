@@ -17,7 +17,7 @@ import { MyPipe } from './app.custom-pipe';
 })
 
 export class VehicleList {
-    @Output() selected = new EventEmitter<Vehicle>();
+    @Output() selected = new EventEmitter<Vehicle>();    
     @ViewChild(VehicleComponent) viewChild: VehicleComponent;
     title: string;
     timesClicked: number = 0;
@@ -32,7 +32,7 @@ export class VehicleList {
     filterInput: string = '';
     constructor(private _vehicleServis: AppService) {
         this.title = 'Angular 2 Binding Events';
-        this.vehicles = this._vehicleServis.getVehicles();
+        //this.vehicles = this._vehicleServis.getVehicles();
     }
     log(msg: string, data: string){
         this.timesClicked+=1;
@@ -44,9 +44,9 @@ export class VehicleList {
     }
     getVihacles (): void {
         this._vehicleServis.getVehiclesPromise().then(vehicles => this.vehicles = vehicles);
-    }
-    OnInit (): void {
-        this.getVihacles;
+    }    
+    ngOnInit() {
+        this.vehicles = this._vehicleServis.getVehicles();
     }
     select (selectedVihacle: Vehicle) {
         this.selectedVehicle=selectedVihacle;
@@ -60,5 +60,8 @@ export class VehicleList {
     onMouseOverButtonEvent(vehicleObject: Vehicle) {
         console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
         this.viewChild.viewChildExample();
+    }
+    remove() {
+        this.selectedVehicle = null;
     }
 }
