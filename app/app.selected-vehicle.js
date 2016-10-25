@@ -29,16 +29,17 @@ var VehicleComponent = (function () {
     };
     VehicleComponent.prototype.ngAfterViewInit = function () {
         console.log('This is AFTER VIEW EVENT!');
-        this.onLifeCycleHookEvent.emit('After View Event Emitted!');
+        this.onLifeCycleHookEvent.emit('AFTER VIEW INIT Life cycle hook!');
     };
     VehicleComponent.prototype.ngOnInit = function () {
         console.log('This is ON INIT EVENT!');
+        this.onLifeCycleHookEvent.emit('On INIT life cycle hook!');
     };
     VehicleComponent.prototype.ngOnChanges = function () {
-        //console.log(`New vehichle ${this.vehicleselected.model} is selected`);
-        //console.log(`New vehichle ${this.vehicleselected.model} was selected!`);
-        //console.log('New vehichle selected - ' + this.vehicleselected.model);
-        console.log('New vehichle selected!');
+        console.log("New vehichle " + this.vehicleselected.model + " was selected!");
+        console.log('New vehichle selected - ' + this.vehicleselected.model);
+        this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
+        //console.log('New vehichle selected!');
     };
     VehicleComponent.prototype.ngOnDestroy = function () {
         console.log('Component destroyed!');

@@ -30,6 +30,7 @@ export class VehicleList {
     selectedVehicle: Vehicle;
     vehicles1: any;
     filterInput: string = '';
+    hooksMessages: string [] = [];
     constructor(private _vehicleServis: AppService) {
         this.title = 'Angular 2 Binding Events';
         //this.vehicles = this._vehicleServis.getVehicles();
@@ -47,6 +48,16 @@ export class VehicleList {
     }    
     ngOnInit() {
         this.vehicles = this._vehicleServis.getVehicles();
+    }
+    processLifeCycleEvent(event: string) {
+        console.log(`Life cycle hook: ${event}!`);
+        this.hooksMessages.splice(0,0, event);
+    }
+    onInit(event: string) {
+        console.log(`Initialisatoin for the following component ${event}!`);
+    }
+    onChanges(event: string) {
+        console.log(`Component ${event} has changed!`);
     }
     select (selectedVihacle: Vehicle) {
         this.selectedVehicle=selectedVihacle;

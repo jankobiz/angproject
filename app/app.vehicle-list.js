@@ -24,6 +24,7 @@ var VehicleList = (function () {
         this.divcolor = "white";
         this.bckdivcolor = "darkred";
         this.filterInput = '';
+        this.hooksMessages = [];
         this.title = 'Angular 2 Binding Events';
         //this.vehicles = this._vehicleServis.getVehicles();
     }
@@ -41,6 +42,16 @@ var VehicleList = (function () {
     };
     VehicleList.prototype.ngOnInit = function () {
         this.vehicles = this._vehicleServis.getVehicles();
+    };
+    VehicleList.prototype.processLifeCycleEvent = function (event) {
+        console.log("Life cycle hook: " + event + "!");
+        this.hooksMessages.splice(0, 0, event);
+    };
+    VehicleList.prototype.onInit = function (event) {
+        console.log("Initialisatoin for the following component " + event + "!");
+    };
+    VehicleList.prototype.onChanges = function (event) {
+        console.log("Component " + event + " has changed!");
     };
     VehicleList.prototype.select = function (selectedVihacle) {
         this.selectedVehicle = selectedVihacle;
