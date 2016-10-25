@@ -16,18 +16,18 @@ export class VehicleComponent implements OnChanges, OnInit, AfterViewInit, OnDes
 
     onClick() {
         console.log('H3 selected vehicle has been clicked!');
-        this.vehicleClicked.emit(`The vehicle ${this.vehicleselected.model} was clicked!`);  
+        this.vehicleClicked.emit(`The vehicle ${this.vehicleselected.model} was clicked!`);
     }
     onMouseOver() {
         console.log('Trying another event listener');
         this.mouseOverButton.emit(this.vehicleselected);
-    }    
+    }
     viewChildExample() {
         console.log('Viewchild example is working! You have selected ' + this.vehicleselected.model);
     }
     ngAfterViewInit() {
         console.log('This is AFTER VIEW EVENT!');
-        this.onLifeCycleHookEvent.emit('AFTER VIEW INIT Life cycle hook!');        
+        this.onLifeCycleHookEvent.emit('AFTER VIEW INIT Life cycle hook!');
     }
     ngOnInit() {
         console.log('This is ON INIT EVENT!');
@@ -39,7 +39,7 @@ export class VehicleComponent implements OnChanges, OnInit, AfterViewInit, OnDes
         this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
         //console.log('New vehichle selected!');
     }
-    ngOnDestroy() {        
+    ngOnDestroy() {
         console.log('Component destroyed!');
     }
 }
