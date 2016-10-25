@@ -39,7 +39,7 @@ export class VehicleComponent implements OnChanges, OnInit, AfterViewInit, OnDes
         this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
         //console.log('New vehichle selected!');
     }
-    ngOnDestroy() {
+    ngOnDestroy() {        
         console.log('Component destroyed!');
     }
 }

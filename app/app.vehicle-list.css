@@ -9,6 +9,5 @@
 }
 
 *.vehicles li .selected {
-  background-color: #ccc;
-  width: 250px;
+  background-color: #ccc;  
 }
