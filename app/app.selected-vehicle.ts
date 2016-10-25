@@ -27,16 +27,17 @@ export class VehicleComponent implements OnChanges, OnInit, AfterViewInit, OnDes
     }
     ngAfterViewInit() {
         console.log('This is AFTER VIEW EVENT!');
-        this.onLifeCycleHookEvent.emit('After View Event Emitted!');        
+        this.onLifeCycleHookEvent.emit('AFTER VIEW INIT Life cycle hook!');        
     }
     ngOnInit() {
         console.log('This is ON INIT EVENT!');
+        this.onLifeCycleHookEvent.emit('On INIT life cycle hook!');
     }
     ngOnChanges() {
-        //console.log(`New vehichle ${this.vehicleselected.model} is selected`);
-        //console.log(`New vehichle ${this.vehicleselected.model} was selected!`);
-        //console.log('New vehichle selected - ' + this.vehicleselected.model);
-        console.log('New vehichle selected!');
+        console.log(`New vehichle ${this.vehicleselected.model} was selected!`);
+        console.log('New vehichle selected - ' + this.vehicleselected.model);
+        this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
+        //console.log('New vehichle selected!');
     }
     ngOnDestroy() {
         console.log('Component destroyed!');

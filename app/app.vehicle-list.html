@@ -29,14 +29,23 @@
             <div style="margin-top:5px"></div>
         </li>
     </ul>
-    <button (click)=remove()>Remove component</button>
+    <div>
+        <h3>Life Cycle Hooks</h3>
+        <ul>
+            <li *ngFor='let hooksMessage of hooksMessages'>
+                {{hooksMessage}}
+            </li>
+        </ul>
+    </div>
+    <button (click)=remove()>Remove component</button>    
     <div *ngIf="vehicles.length">
         <h3>You have {{vehicles.length}} vehicles</h3>
     </div>
     <selected-vehicle *ngIf="selectedVehicle" 
         [vehicleselected]="selectedVehicle"
         (vehicleClicked)='onVehicleselected($event)'
-        (mouseOverButton)='onMouseOverButtonEvent($event)'    
+        (mouseOverButton)='onMouseOverButtonEvent($event)'
+        (onLifeCycleHookEvent)='processLifeCycleEvent($event)'
     ></selected-vehicle>
 </div>
 <p></p>
