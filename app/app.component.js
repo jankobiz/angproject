@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var app_vehicle_list_1 = require('./app.vehicle-list');
 var MainApp = (function () {
     function MainApp() {
     }
@@ -20,7 +19,6 @@ var MainApp = (function () {
             selector: 'main-app',
             templateUrl: 'app/app.component.html',
             styleUrls: ['./app/app.component.css'],
-            directives: [app_vehicle_list_1.VehicleList]
         }), 
         __metadata('design:paramtypes', [])
     ], MainApp);

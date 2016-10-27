@@ -10,9 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var app_service_1 = require('./app.service');
-var app_selected_vehicle_1 = require('./app.selected-vehicle');
-var app_simple_pipe_1 = require('./app.simple-pipe');
-var app_custom_pipe_1 = require('./app.custom-pipe');
 var VehicleList = (function () {
     function VehicleList(_vehicleServis) {
         this._vehicleServis = _vehicleServis;
@@ -64,7 +61,7 @@ var VehicleList = (function () {
     };
     VehicleList.prototype.onMouseOverButtonEvent = function (vehicleObject) {
         console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
-        this.viewChild.viewChildExample();
+        //this.viewChild.viewChildExample();
     };
     VehicleList.prototype.remove = function () {
         this.selectedVehicle = null;
@@ -73,18 +70,12 @@ var VehicleList = (function () {
         core_1.Output(), 
         __metadata('design:type', Object)
     ], VehicleList.prototype, "selected", void 0);
-    __decorate([
-        core_1.ViewChild(app_selected_vehicle_1.VehicleComponent), 
-        __metadata('design:type', app_selected_vehicle_1.VehicleComponent)
-    ], VehicleList.prototype, "viewChild", void 0);
     VehicleList = __decorate([
         core_1.Component({
             selector: 'vehicle-list',
             templateUrl: 'app/app.vehicle-list.html',
             styleUrls: ['./app/app.vehicle-list.css'],
-            directives: [app_selected_vehicle_1.VehicleComponent],
             providers: [app_service_1.AppService],
-            pipes: [app_simple_pipe_1.SimplePipe, app_custom_pipe_1.MyPipe]
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService])
     ], VehicleList);
