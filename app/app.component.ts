@@ -8,7 +8,7 @@ import {VehicleList} from './app.vehicle-list';
     selector: 'main-app',
     templateUrl: 'app/app.component.html',
     styleUrls: ['./app/app.component.css'],
-    directives: [VehicleList]
+    directives: [VehicleList]    
 })
 
 export class MainApp {
