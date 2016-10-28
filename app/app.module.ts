@@ -4,18 +4,18 @@ import { FormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { MainApp } from './app.component';
-import { VehicleList } from './app.vehicle-list';
-import {VehicleComponent} from './app.selected-vehicle';
-import { MyPipe } from './app.custom-pipe';
-import { SimplePipe } from './app.simple-pipe';
+
+/* Feature Modules */
+import { VehicleModule } from './vehicles/vehicle-module';
 
 @NgModule ({
     imports: [ 
         BrowserModule,
         FormsModule,
-        HttpModule 
+        HttpModule,
+        VehicleModule 
     ],
-    declarations: [ MainApp, VehicleList, MyPipe, VehicleComponent, SimplePipe ],
+    declarations: [ MainApp ],
     bootstrap: [ MainApp ]
 })
 

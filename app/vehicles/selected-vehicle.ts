@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import {AppService} from './app.service';
+import {AppService} from './vehicle-service';
 
-import { Vehicle } from './app.vehicle';
+import { Vehicle } from './vehicle';
 
 @Component ({
     selector: 'selected-vehicle',        
-    templateUrl: 'app/app.selected-vehicle.html'      
+    templateUrl: './app/vehicles/selected-vehicle.html'      
 })
 
 export class VehicleComponent implements OnChanges, OnInit, AfterViewInit, OnDestroy {

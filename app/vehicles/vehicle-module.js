@@ -9,29 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-/* Feature Modules */
-var vehicle_module_1 = require('./vehicles/vehicle-module');
-var AppModule = (function () {
-    function AppModule() {
+var vehicle_list_1 = require('./vehicle-list');
+var selected_vehicle_1 = require('./selected-vehicle');
+var custom_pipe_1 = require('./custom-pipe');
+var simple_pipe_1 = require('./simple-pipe');
+var vehicle_service_1 = require('./vehicle-service');
+var VehicleModule = (function () {
+    function VehicleModule() {
     }
-    AppModule = __decorate([
+    VehicleModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule,
-                vehicle_module_1.VehicleModule
+                forms_1.FormsModule
             ],
-            declarations: [app_component_1.MainApp],
-            bootstrap: [app_component_1.MainApp]
+            declarations: [
+                vehicle_list_1.VehicleList,
+                custom_pipe_1.MyPipe,
+                selected_vehicle_1.VehicleComponent,
+                simple_pipe_1.SimplePipe
+            ],
+            providers: [
+                vehicle_service_1.AppService
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], VehicleModule);
+    return VehicleModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.VehicleModule = VehicleModule;
+//# sourceMappingURL=vehicle-module.js.map

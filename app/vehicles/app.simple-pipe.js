@@ -9,29 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-/* Feature Modules */
-var vehicle_module_1 = require('./vehicles/vehicle-module');
-var AppModule = (function () {
-    function AppModule() {
+var SimplePipe = (function () {
+    function SimplePipe() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule,
-                vehicle_module_1.VehicleModule
-            ],
-            declarations: [app_component_1.MainApp],
-            bootstrap: [app_component_1.MainApp]
+    SimplePipe.prototype.transform = function (value, args) {
+        //let filter: string = args[0] ? args[0].toLocaleLowerCase() : null;
+        return 'SIMPLE PIPE!';
+    };
+    SimplePipe = __decorate([
+        core_1.Pipe({
+            name: 'simplePipe'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], SimplePipe);
+    return SimplePipe;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.SimplePipe = SimplePipe;
+//# sourceMappingURL=app.simple-pipe.js.map
