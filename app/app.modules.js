@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MainApp = (function () {
-    function MainApp() {
+var platform_browser_1 = require('@angular/platform-browser');
+var app_component_1 = require('./app.component');
+var app_vehicle_list_1 = require('./app.vehicle-list');
+var AppModule = (function () {
+    function AppModule() {
     }
-    MainApp.prototype.notice = function (selectedVihacle) {
-    };
-    MainApp = __decorate([
-        core_1.Component({
-            selector: 'main-app',
-            templateUrl: 'app/app.component.html',
-            styleUrls: ['./app/app.component.css'],
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule],
+            declarations: [app_component_1.MainApp, app_vehicle_list_1.VehicleList],
+            bootstrap: [app_component_1.MainApp]
         }), 
         __metadata('design:paramtypes', [])
-    ], MainApp);
-    return MainApp;
+    ], AppModule);
+    return AppModule;
 }());
-exports.MainApp = MainApp;
-//# sourceMappingURL=app.component.js.map
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.modules.js.map

@@ -2,23 +2,17 @@ import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angu
 import {AppService} from './app.service';
 
 import { Vehicle } from './app.vehicle';
-import {VehicleComponent} from './app.selected-vehicle';
-
-import { SimplePipe } from './app.simple-pipe';
-import { MyPipe } from './app.custom-pipe';
 
 @Component ({
     selector: 'vehicle-list',
     templateUrl: 'app/app.vehicle-list.html',
-    styleUrls: ['./app/app.vehicle-list.css'],
-    directives: [VehicleComponent],
-    providers: [AppService],
-    pipes: [SimplePipe, MyPipe]
+    styleUrls: ['./app/app.vehicle-list.css'],    
+    providers: [AppService],    
 })
 
 export class VehicleList {
     @Output() selected = new EventEmitter<Vehicle>();    
-    @ViewChild(VehicleComponent) viewChild: VehicleComponent;
+    //@ViewChild(VehicleComponent) viewChild: VehicleComponent;
     title: string;
     timesClicked: number = 0;
     inputtext = 'This is default text';    
@@ -70,7 +64,7 @@ export class VehicleList {
     }
     onMouseOverButtonEvent(vehicleObject: Vehicle) {
         console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
-        this.viewChild.viewChildExample();
+        //this.viewChild.viewChildExample();
     }
     remove() {
         this.selectedVehicle = null;

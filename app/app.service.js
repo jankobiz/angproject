@@ -10,8 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var app_mock_vehicles_1 = require('./app.mock-vehicles');
+var http_1 = require('@angular/http');
 var AppService = (function () {
-    function AppService() {
+    function AppService(_http) {
+        this._http = _http;
         this.getVehicles1 = function () { return [
             { id: 1, name: 'X-Wing Fighter' },
             { id: 2, name: 'Tie Fighter' },
@@ -26,7 +28,7 @@ var AppService = (function () {
     };
     AppService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], AppService);
     return AppService;
 }());
