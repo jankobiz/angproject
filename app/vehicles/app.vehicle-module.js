@@ -12,26 +12,26 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-/* Feature Modules */
-var vehicle_module_1 = require('./vehicles/vehicle-module');
-var AppModule = (function () {
-    function AppModule() {
+var app_vehicle_list_1 = require('./app.vehicle-list');
+var app_selected_vehicle_1 = require('./app.selected-vehicle');
+var app_custom_pipe_1 = require('./app.custom-pipe');
+var app_simple_pipe_1 = require('./app.simple-pipe');
+var VehicleModule = (function () {
+    function VehicleModule() {
     }
-    AppModule = __decorate([
+    VehicleModule = __decorate([
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule,
-                vehicle_module_1.VehicleModule
+                http_1.HttpModule
             ],
-            declarations: [app_component_1.MainApp],
-            bootstrap: [app_component_1.MainApp]
+            declarations: [app_vehicle_list_1.VehicleList, app_custom_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
+            providers: []
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], VehicleModule);
+    return VehicleModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.VehicleModule = VehicleModule;
+//# sourceMappingURL=app.vehicle-module.js.map

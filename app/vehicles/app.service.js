@@ -9,29 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
+var app_mock_vehicles_1 = require('./app.mock-vehicles');
 var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-/* Feature Modules */
-var vehicle_module_1 = require('./vehicles/vehicle-module');
-var AppModule = (function () {
-    function AppModule() {
+var AppService = (function () {
+    function AppService(_http) {
+        this._http = _http;
+        this.getVehicles1 = function () { return [
+            { id: 1, name: 'X-Wing Fighter' },
+            { id: 2, name: 'Tie Fighter' },
+            { id: 3, name: 'Y-Wing Fighter' }
+        ]; };
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule,
-                vehicle_module_1.VehicleModule
-            ],
-            declarations: [app_component_1.MainApp],
-            bootstrap: [app_component_1.MainApp]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    AppService.prototype.getVehicles = function () {
+        return app_mock_vehicles_1.VEHICLES;
+    };
+    AppService.prototype.getVehiclesPromise = function () {
+        return Promise.resolve(app_mock_vehicles_1.VEHICLES);
+    };
+    AppService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], AppService);
+    return AppService;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppService = AppService;
+//# sourceMappingURL=app.service.js.map
