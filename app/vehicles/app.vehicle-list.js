@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var app_service_1 = require('./app.service');
+var app_vehicle_service_1 = require('./app.vehicle-service');
 var VehicleList = (function () {
     function VehicleList(_vehicleServis) {
         this._vehicleServis = _vehicleServis;
@@ -73,11 +73,11 @@ var VehicleList = (function () {
     VehicleList = __decorate([
         core_1.Component({
             selector: 'vehicle-list',
-            templateUrl: 'app/app.vehicle-list.html',
-            styleUrls: ['./app/app.vehicle-list.css'],
-            providers: [app_service_1.AppService],
+            templateUrl: 'app/vehicles/app.vehicle-list.html',
+            styleUrls: ['./app/vehicles/app.vehicle-list.css'],
+            providers: [app_vehicle_service_1.AppService],
         }), 
-        __metadata('design:paramtypes', [app_service_1.AppService])
+        __metadata('design:paramtypes', [app_vehicle_service_1.AppService])
     ], VehicleList);
     return VehicleList;
 }());

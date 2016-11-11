@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {Vehicle} from './app.vehicle';
-import {VEHICLES} from './app.mock-vehicles';
+import { Vehicle } from './app.vehicle';
+import { VEHICLES } from './app.mock-vehicles';
 
 import { Http } from '@angular/http';
 

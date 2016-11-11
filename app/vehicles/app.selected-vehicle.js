@@ -63,7 +63,7 @@ var VehicleComponent = (function () {
     VehicleComponent = __decorate([
         core_1.Component({
             selector: 'selected-vehicle',
-            templateUrl: 'app/app.selected-vehicle.html'
+            templateUrl: 'app/vehicles/app.selected-vehicle.html'
         }), 
         __metadata('design:paramtypes', [])
     ], VehicleComponent);

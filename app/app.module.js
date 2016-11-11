@@ -13,10 +13,10 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var app_vehicle_list_1 = require('./app.vehicle-list');
-var app_selected_vehicle_1 = require('./app.selected-vehicle');
-var app_custom_pipe_1 = require('./app.custom-pipe');
-var app_simple_pipe_1 = require('./app.simple-pipe');
+var app_vehicle_list_1 = require('./vehicles/app.vehicle-list');
+var app_selected_vehicle_1 = require('./vehicles/app.selected-vehicle');
+var app_vehicle_filter_pipe_1 = require('./vehicles/app.vehicle-filter.pipe');
+var app_simple_pipe_1 = require('./vehicles/app.simple-pipe');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +27,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule
             ],
-            declarations: [app_component_1.MainApp, app_vehicle_list_1.VehicleList, app_custom_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
+            declarations: [app_component_1.MainApp, app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
             bootstrap: [app_component_1.MainApp]
         }), 
         __metadata('design:paramtypes', [])
