@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angular/core';
-import {AppService} from './app.vehicle-service';
+import { VehicleService } from './app.vehicle-service';
 
 import { Vehicle } from './app.vehicle';
 
@@ -7,7 +7,7 @@ import { Vehicle } from './app.vehicle';
     selector: 'vehicle-list',
     templateUrl: 'app/vehicles/app.vehicle-list.html',
     styleUrls: ['./app/vehicles/app.vehicle-list.css'],    
-    providers: [AppService],    
+    providers: [VehicleService],    
 })
 
 export class VehicleList {
@@ -25,7 +25,7 @@ export class VehicleList {
     vehicles1: any;
     filterInput: string = '';
     hooksMessages: string [] = [];
-    constructor(private _vehicleServis: AppService) {
+    constructor(private _vehicleServis: VehicleService) {
         this.title = 'Angular 2 Binding Events';
         //this.vehicles = this._vehicleServis.getVehicles();
     }

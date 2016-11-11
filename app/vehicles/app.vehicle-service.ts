@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 
-export class AppService {
+export class VehicleService {
 
     constructor(private _http: Http) {
         

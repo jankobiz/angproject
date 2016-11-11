@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var app_mock_vehicles_1 = require('./app.mock-vehicles');
 var http_1 = require('@angular/http');
-var AppService = (function () {
-    function AppService(_http) {
+var VehicleService = (function () {
+    function VehicleService(_http) {
         this._http = _http;
         this.getVehicles1 = function () { return [
             { id: 1, name: 'X-Wing Fighter' },
@@ -20,17 +20,17 @@ var AppService = (function () {
             { id: 3, name: 'Y-Wing Fighter' }
         ]; };
     }
-    AppService.prototype.getVehicles = function () {
+    VehicleService.prototype.getVehicles = function () {
         return app_mock_vehicles_1.VEHICLES;
     };
-    AppService.prototype.getVehiclesPromise = function () {
+    VehicleService.prototype.getVehiclesPromise = function () {
         return Promise.resolve(app_mock_vehicles_1.VEHICLES);
     };
-    AppService = __decorate([
+    VehicleService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], AppService);
-    return AppService;
+    ], VehicleService);
+    return VehicleService;
 }());
-exports.AppService = AppService;
+exports.VehicleService = VehicleService;
 //# sourceMappingURL=app.vehicle-service.js.map

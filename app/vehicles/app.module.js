@@ -17,7 +17,6 @@ var app_vehicle_list_1 = require('./vehicles/app.vehicle-list');
 var app_selected_vehicle_1 = require('./vehicles/app.selected-vehicle');
 var app_vehicle_filter_pipe_1 = require('./vehicles/app.vehicle-filter.pipe');
 var app_simple_pipe_1 = require('./vehicles/app.simple-pipe');
-var app_vehicle_service_1 = require('./vehicles/app.vehicle-service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,7 +28,6 @@ var AppModule = (function () {
                 http_1.HttpModule
             ],
             declarations: [app_component_1.MainApp, app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
-            providers: [app_vehicle_service_1.VehicleService],
             bootstrap: [app_component_1.MainApp]
         }), 
         __metadata('design:paramtypes', [])

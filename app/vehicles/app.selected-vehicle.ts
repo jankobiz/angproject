@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import {AppService} from './app.vehicle-service';
+import { VehicleService } from './app.vehicle-service';
 
 import { Vehicle } from './app.vehicle';
 

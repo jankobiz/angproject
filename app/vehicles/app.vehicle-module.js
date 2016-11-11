@@ -9,32 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
+var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
-var app_vehicle_list_1 = require('./vehicles/app.vehicle-list');
-var app_selected_vehicle_1 = require('./vehicles/app.selected-vehicle');
-var app_vehicle_filter_pipe_1 = require('./vehicles/app.vehicle-filter.pipe');
-var app_simple_pipe_1 = require('./vehicles/app.simple-pipe');
-var app_vehicle_service_1 = require('./vehicles/app.vehicle-service');
+var app_vehicle_list_1 = require('./app.vehicle-list');
+var app_selected_vehicle_1 = require('./app.selected-vehicle');
+var app_vehicle_filter_pipe_1 = require('./app.vehicle-filter.pipe');
+var app_simple_pipe_1 = require('./app.simple-pipe');
+var app_vehicle_service_1 = require('./app.vehicle-service');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule
+                common_1.CommonModule,
+                forms_1.FormsModule
             ],
-            declarations: [app_component_1.MainApp, app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
-            providers: [app_vehicle_service_1.VehicleService],
-            bootstrap: [app_component_1.MainApp]
+            declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
+            providers: [app_vehicle_service_1.VehicleService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
     return AppModule;
 }());
 exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+//# sourceMappingURL=app.vehicle-module.js.map

@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import {AppService} from './vehicles/app.service';
+import { VehicleService } from './vehicles/app.vehicle-service';
 
 @Component ({
     selector: 'main-app',

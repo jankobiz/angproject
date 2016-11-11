@@ -75,9 +75,9 @@ var VehicleList = (function () {
             selector: 'vehicle-list',
             templateUrl: 'app/vehicles/app.vehicle-list.html',
             styleUrls: ['./app/vehicles/app.vehicle-list.css'],
-            providers: [app_vehicle_service_1.AppService],
+            providers: [app_vehicle_service_1.VehicleService],
         }), 
-        __metadata('design:paramtypes', [app_vehicle_service_1.AppService])
+        __metadata('design:paramtypes', [app_vehicle_service_1.VehicleService])
     ], VehicleList);
     return VehicleList;
 }());

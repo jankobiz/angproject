@@ -5,9 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { MainApp } from './app.component';
 import { VehicleList } from './vehicles/app.vehicle-list';
-import {VehicleComponent} from './vehicles/app.selected-vehicle';
+import { VehicleComponent } from './vehicles/app.selected-vehicle';
 import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
 import { SimplePipe } from './vehicles/app.simple-pipe';
+
+import { VehicleService } from './vehicles/app.vehicle-service';
 
 @NgModule ({
     imports: [ 
@@ -16,6 +18,7 @@ import { SimplePipe } from './vehicles/app.simple-pipe';
         HttpModule 
     ],
     declarations: [ MainApp, VehicleList, MyPipe, VehicleComponent, SimplePipe ],
+    providers: [ VehicleService ],
     bootstrap: [ MainApp ]
 })
 
