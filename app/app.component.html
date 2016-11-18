@@ -1,5 +1,11 @@
 <div>
-    <h1>Storyline Tracker</h1>
-    <h3>Component Demo</h3>
+    <h1>Storyline Tracker</h1>    
+    <h4>Pick a highlight color</h4>
+    <div>
+        <input type="radio" name="colors" (click)="color='lightgreen'">Green
+        <input type="radio" name="colors" (click)="color='lightblue'">Blue
+        <input type="radio" name="colors" (click)="color='brown'">Brown
+    </div>
+    <h3 [myHighlight]="color">Component Demo</h3>
     <vehicle-list>Vehicle list</vehicle-list>
 </div>

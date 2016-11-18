@@ -11,13 +11,22 @@ import { SimplePipe } from './vehicles/app.simple-pipe';
 
 import { VehicleService } from './vehicles/app.vehicle-service';
 
+import { HighlightDirective } from './shared/highlight.directive';
+
 @NgModule ({
     imports: [ 
         BrowserModule,
         FormsModule,
         HttpModule 
     ],
-    declarations: [ MainApp, VehicleList, MyPipe, VehicleComponent, SimplePipe ],
+    declarations: [
+        MainApp,
+        VehicleList,
+        MyPipe,
+        VehicleComponent,
+        SimplePipe,
+        HighlightDirective
+    ],
     providers: [ VehicleService ],
     bootstrap: [ MainApp ]
 })

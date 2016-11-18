@@ -41,7 +41,7 @@
     <div *ngIf="vehicles.length">
         <h3>You have {{vehicles.length}} vehicles</h3>
     </div>
-    <selected-vehicle *ngIf="selectedVehicle" 
+    <selected-vehicle *ngIf="selectedVehicle"
         [vehicleselected]="selectedVehicle"
         (vehicleClicked)='onVehicleselected($event)'
         (mouseOverButton)='onMouseOverButtonEvent($event)'
