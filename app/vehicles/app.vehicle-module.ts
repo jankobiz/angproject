@@ -7,6 +7,8 @@ import { VehicleComponent } from './app.selected-vehicle';
 import { MyPipe } from './app.vehicle-filter.pipe';
 import { SimplePipe } from './app.simple-pipe';
 
+import { HighlightDirective } from '../shared/highlight.directive';
+
 import { VehicleService } from './app.vehicle-service';
 
 @NgModule ({
@@ -14,10 +16,11 @@ import { VehicleService } from './app.vehicle-service';
         CommonModule,
         FormsModule
     ],
-    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe ],
+    exports: [VehicleList, VehicleComponent, MyPipe, SimplePipe, HighlightDirective],
+    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe, HighlightDirective],
     providers: [ VehicleService ]
 })
 
-export class AppModule {
+export class VehicleModule {
 
 }

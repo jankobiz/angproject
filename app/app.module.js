@@ -13,12 +13,13 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
-var app_vehicle_list_1 = require('./vehicles/app.vehicle-list');
-var app_selected_vehicle_1 = require('./vehicles/app.selected-vehicle');
-var app_vehicle_filter_pipe_1 = require('./vehicles/app.vehicle-filter.pipe');
-var app_simple_pipe_1 = require('./vehicles/app.simple-pipe');
+//import { VehicleList } from './vehicles/app.vehicle-list';
+//import { VehicleComponent } from './vehicles/app.selected-vehicle';
+//import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
+//import { SimplePipe } from './vehicles/app.simple-pipe';
 var app_vehicle_service_1 = require('./vehicles/app.vehicle-service');
-var highlight_directive_1 = require('./shared/highlight.directive');
+/* Feature Modules */
+var app_vehicle_module_1 = require('./vehicles/app.vehicle-module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,15 +28,11 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                app_vehicle_module_1.VehicleModule
             ],
             declarations: [
                 app_component_1.MainApp,
-                app_vehicle_list_1.VehicleList,
-                app_vehicle_filter_pipe_1.MyPipe,
-                app_selected_vehicle_1.VehicleComponent,
-                app_simple_pipe_1.SimplePipe,
-                highlight_directive_1.HighlightDirective
             ],
             providers: [app_vehicle_service_1.VehicleService],
             bootstrap: [app_component_1.MainApp]
