@@ -6,6 +6,9 @@
         <input type="radio" name="colors" (click)="color='lightblue'">Blue
         <input type="radio" name="colors" (click)="color='brown'">Brown
     </div>
-    <h3 [myHighlight]="color">Component Demo</h3>
+    <h3 [myHighlight]="color" [defaultColor]="'violet'">Component Demo</h3>
+
+    <p [myHighlight]="color">Highlight me!</p>
+
     <vehicle-list>Vehicle list</vehicle-list>
 </div>

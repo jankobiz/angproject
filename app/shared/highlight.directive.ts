@@ -7,11 +7,15 @@ import { Directive, ElementRef, Input, Renderer, HostListener } from '@angular/c
 
 export class HighlightDirective {
 
-    private _defaultColor = 'red';
+    private _defaultColor = 'red';    
+
+    constructor(private el: ElementRef, private renderer: Renderer) {}
 
     @Input ('myHighlight') highlightColor: string;
 
-    constructor(private el: ElementRef, private renderer: Renderer) {}
+    @Input () set defaultColor (colorName: string) {
+        this._defaultColor = colorName || this._defaultColor;
+    }
 
     @HostListener ('mouseenter') onMouseEnter () {
         this.highlight(this.highlightColor || this._defaultColor);
@@ -24,4 +28,5 @@ export class HighlightDirective {
     private highlight (color: string) {
         this.renderer.setElementStyle(this.el.nativeElement, 'backgroundColor', color);
     }
+
 }
