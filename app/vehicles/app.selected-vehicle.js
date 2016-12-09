@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var app_vehicle_1 = require('./app.vehicle');
+var core_1 = require("@angular/core");
+var app_vehicle_1 = require("./app.vehicle");
 var VehicleComponent = (function () {
     function VehicleComponent() {
         this.vehicleClicked = new core_1.EventEmitter();
@@ -44,30 +44,30 @@ var VehicleComponent = (function () {
     VehicleComponent.prototype.ngOnDestroy = function () {
         console.log('Component destroyed!');
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', app_vehicle_1.Vehicle)
-    ], VehicleComponent.prototype, "vehicleselected", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], VehicleComponent.prototype, "vehicleClicked", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], VehicleComponent.prototype, "mouseOverButton", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], VehicleComponent.prototype, "onLifeCycleHookEvent", void 0);
-    VehicleComponent = __decorate([
-        core_1.Component({
-            selector: 'selected-vehicle',
-            templateUrl: 'app/vehicles/app.selected-vehicle.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], VehicleComponent);
     return VehicleComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", app_vehicle_1.Vehicle)
+], VehicleComponent.prototype, "vehicleselected", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], VehicleComponent.prototype, "vehicleClicked", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], VehicleComponent.prototype, "mouseOverButton", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], VehicleComponent.prototype, "onLifeCycleHookEvent", void 0);
+VehicleComponent = __decorate([
+    core_1.Component({
+        selector: 'selected-vehicle',
+        templateUrl: 'app/vehicles/app.selected-vehicle.html'
+    }),
+    __metadata("design:paramtypes", [])
+], VehicleComponent);
 exports.VehicleComponent = VehicleComponent;
 //# sourceMappingURL=app.selected-vehicle.js.map

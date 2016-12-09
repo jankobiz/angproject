@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var MyPipe = (function () {
     function MyPipe() {
     }
@@ -34,13 +34,13 @@ var MyPipe = (function () {
         //    return vel.model.toLocaleLowerCase().indexOf(filter) !== -1
         //}) : value;        
     };
-    MyPipe = __decorate([
-        core_1.Pipe({
-            name: 'myPipe'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], MyPipe);
     return MyPipe;
 }());
+MyPipe = __decorate([
+    core_1.Pipe({
+        name: 'myPipe'
+    }),
+    __metadata("design:paramtypes", [])
+], MyPipe);
 exports.MyPipe = MyPipe;
 //# sourceMappingURL=app.vehicle-filter.pipe.js.map

@@ -8,38 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
+var http_1 = require("@angular/http");
+var app_component_1 = require("./app.component");
 //import { VehicleList } from './vehicles/app.vehicle-list';
 //import { VehicleComponent } from './vehicles/app.selected-vehicle';
 //import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
 //import { SimplePipe } from './vehicles/app.simple-pipe';
-var app_vehicle_service_1 = require('./vehicles/app.vehicle-service');
+var app_vehicle_service_1 = require("./vehicles/app.vehicle-service");
 /* Feature Modules */
-var app_vehicle_module_1 = require('./vehicles/app.vehicle-module');
+var app_vehicle_module_1 = require("./vehicles/app.vehicle-module");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
-                http_1.HttpModule,
-                app_vehicle_module_1.VehicleModule
-            ],
-            declarations: [
-                app_component_1.MainApp,
-            ],
-            providers: [app_vehicle_service_1.VehicleService],
-            bootstrap: [app_component_1.MainApp]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            forms_1.FormsModule,
+            http_1.HttpModule,
+            app_vehicle_module_1.VehicleModule
+        ],
+        declarations: [
+            app_component_1.MainApp,
+        ],
+        providers: [app_vehicle_service_1.VehicleService],
+        bootstrap: [app_component_1.MainApp]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

@@ -8,31 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var app_vehicle_list_1 = require('./app.vehicle-list');
-var app_selected_vehicle_1 = require('./app.selected-vehicle');
-var app_vehicle_filter_pipe_1 = require('./app.vehicle-filter.pipe');
-var app_simple_pipe_1 = require('./app.simple-pipe');
-var highlight_directive_1 = require('../shared/highlight.directive');
-var app_vehicle_service_1 = require('./app.vehicle-service');
+var core_1 = require("@angular/core");
+var common_1 = require("@angular/common");
+var forms_1 = require("@angular/forms");
+var app_vehicle_list_1 = require("./app.vehicle-list");
+var app_selected_vehicle_1 = require("./app.selected-vehicle");
+var app_vehicle_filter_pipe_1 = require("./app.vehicle-filter.pipe");
+var app_simple_pipe_1 = require("./app.simple-pipe");
+var highlight_directive_1 = require("../shared/highlight.directive");
+var app_vehicle_service_1 = require("./app.vehicle-service");
 var VehicleModule = (function () {
     function VehicleModule() {
     }
-    VehicleModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                forms_1.FormsModule
-            ],
-            exports: [app_vehicle_list_1.VehicleList, app_selected_vehicle_1.VehicleComponent, app_vehicle_filter_pipe_1.MyPipe, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
-            declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
-            providers: [app_vehicle_service_1.VehicleService]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], VehicleModule);
     return VehicleModule;
 }());
+VehicleModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule
+        ],
+        exports: [app_vehicle_list_1.VehicleList, app_selected_vehicle_1.VehicleComponent, app_vehicle_filter_pipe_1.MyPipe, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
+        declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
+        providers: [app_vehicle_service_1.VehicleService]
+    }),
+    __metadata("design:paramtypes", [])
+], VehicleModule);
 exports.VehicleModule = VehicleModule;
 //# sourceMappingURL=app.vehicle-module.js.map
