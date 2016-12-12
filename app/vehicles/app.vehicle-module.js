@@ -15,7 +15,7 @@ var app_vehicle_list_1 = require("./app.vehicle-list");
 var app_selected_vehicle_1 = require("./app.selected-vehicle");
 var app_vehicle_filter_pipe_1 = require("./app.vehicle-filter.pipe");
 var app_simple_pipe_1 = require("./app.simple-pipe");
-var highlight_directive_1 = require("../shared/highlight.directive");
+//import { HighlightDirective } from '../shared/highlight.directive';
 var app_vehicle_service_1 = require("./app.vehicle-service");
 var VehicleModule = (function () {
     function VehicleModule() {
@@ -28,8 +28,8 @@ VehicleModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule
         ],
-        exports: [app_vehicle_list_1.VehicleList, app_selected_vehicle_1.VehicleComponent, app_vehicle_filter_pipe_1.MyPipe, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
-        declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe, highlight_directive_1.HighlightDirective],
+        exports: [app_vehicle_list_1.VehicleList],
+        declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],
         providers: [app_vehicle_service_1.VehicleService]
     }),
     __metadata("design:paramtypes", [])

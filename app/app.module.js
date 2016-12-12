@@ -17,7 +17,8 @@ var app_component_1 = require("./app.component");
 //import { VehicleComponent } from './vehicles/app.selected-vehicle';
 //import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
 //import { SimplePipe } from './vehicles/app.simple-pipe';
-var app_vehicle_service_1 = require("./vehicles/app.vehicle-service");
+//import { VehicleService } from './vehicles/app.vehicle-service';
+var highlight_directive_1 = require("./shared/highlight.directive");
 /* Feature Modules */
 var app_vehicle_module_1 = require("./vehicles/app.vehicle-module");
 var AppModule = (function () {
@@ -35,8 +36,9 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.MainApp,
+            highlight_directive_1.HighlightDirective
         ],
-        providers: [app_vehicle_service_1.VehicleService],
+        //providers: [ VehicleService ],
         bootstrap: [app_component_1.MainApp]
     }),
     __metadata("design:paramtypes", [])

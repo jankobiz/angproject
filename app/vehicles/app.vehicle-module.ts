@@ -7,7 +7,7 @@ import { VehicleComponent } from './app.selected-vehicle';
 import { MyPipe } from './app.vehicle-filter.pipe';
 import { SimplePipe } from './app.simple-pipe';
 
-import { HighlightDirective } from '../shared/highlight.directive';
+//import { HighlightDirective } from '../shared/highlight.directive';
 
 import { VehicleService } from './app.vehicle-service';
 
@@ -16,8 +16,8 @@ import { VehicleService } from './app.vehicle-service';
         CommonModule,
         FormsModule
     ],
-    exports: [VehicleList, VehicleComponent, MyPipe, SimplePipe, HighlightDirective],
-    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe, HighlightDirective],
+    exports: [VehicleList],
+    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe],
     providers: [ VehicleService ]
 })
 

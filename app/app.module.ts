@@ -9,9 +9,9 @@ import { MainApp } from './app.component';
 //import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
 //import { SimplePipe } from './vehicles/app.simple-pipe';
 
-import { VehicleService } from './vehicles/app.vehicle-service';
+//import { VehicleService } from './vehicles/app.vehicle-service';
 
-
+import { HighlightDirective } from './shared/highlight.directive';
 
 /* Feature Modules */
 import { VehicleModule } from './vehicles/app.vehicle-module';
@@ -25,13 +25,14 @@ import { VehicleModule } from './vehicles/app.vehicle-module';
     ],
     declarations: [
         MainApp,
+        HighlightDirective        
         //VehicleList,
         //MyPipe,
         //VehicleComponent,
         //SimplePipe
         
     ],
-    providers: [ VehicleService ],
+    //providers: [ VehicleService ],
     bootstrap: [ MainApp ]
 })
 
