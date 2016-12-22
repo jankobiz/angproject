@@ -11,12 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
+var router_1 = require("@angular/router");
 var app_vehicle_list_1 = require("./app.vehicle-list");
 var app_selected_vehicle_1 = require("./app.selected-vehicle");
 var app_vehicle_filter_pipe_1 = require("./app.vehicle-filter.pipe");
 var app_simple_pipe_1 = require("./app.simple-pipe");
 //import { HighlightDirective } from '../shared/highlight.directive';
 var app_vehicle_service_1 = require("./app.vehicle-service");
+var appRoutes = [
+    { path: 'vehicles', component: app_vehicle_list_1.VehicleList }
+];
 var VehicleModule = (function () {
     function VehicleModule() {
     }
@@ -26,7 +30,8 @@ VehicleModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            router_1.RouterModule.forRoot(appRoutes)
         ],
         exports: [app_vehicle_list_1.VehicleList],
         declarations: [app_vehicle_list_1.VehicleList, app_vehicle_filter_pipe_1.MyPipe, app_selected_vehicle_1.VehicleComponent, app_simple_pipe_1.SimplePipe],

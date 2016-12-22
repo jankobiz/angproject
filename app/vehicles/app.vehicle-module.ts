@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule} from '@angular/forms';
+import { RouterModule, Routes } from  '@angular/router';
 
 import { VehicleList } from './app.vehicle-list';
 import { VehicleComponent } from './app.selected-vehicle';
@@ -11,10 +12,15 @@ import { SimplePipe } from './app.simple-pipe';
 
 import { VehicleService } from './app.vehicle-service';
 
+const appRoutes: Routes = [  
+  { path: 'vehicles', component: VehicleList }  
+];
+
 @NgModule ({
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        RouterModule.forRoot(appRoutes)
     ],
     exports: [VehicleList],
     declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe],

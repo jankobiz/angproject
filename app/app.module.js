@@ -12,7 +12,9 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
+var welcome_component_1 = require("./home/welcome.component");
 //import { VehicleList } from './vehicles/app.vehicle-list';
 //import { VehicleComponent } from './vehicles/app.selected-vehicle';
 //import { MyPipe } from './vehicles/app.vehicle-filter.pipe';
@@ -21,6 +23,12 @@ var app_component_1 = require("./app.component");
 var highlight_directive_1 = require("./shared/highlight.directive");
 /* Feature Modules */
 var app_vehicle_module_1 = require("./vehicles/app.vehicle-module");
+var appRoutes = [
+    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+    //{ path: 'vehicles', component: VehicleList },
+    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+    { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -32,11 +40,13 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            router_1.RouterModule.forRoot(appRoutes),
             app_vehicle_module_1.VehicleModule
         ],
         declarations: [
             app_component_1.MainApp,
-            highlight_directive_1.HighlightDirective
+            highlight_directive_1.HighlightDirective,
+            welcome_component_1.WelcomeComponent
         ],
         //providers: [ VehicleService ],
         bootstrap: [app_component_1.MainApp]
