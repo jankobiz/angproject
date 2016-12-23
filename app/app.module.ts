@@ -16,7 +16,7 @@ import { WelcomeComponent } from './home/welcome.component';
 import { HighlightDirective } from './shared/highlight.directive';
 
 /* Feature Modules */
-import { VehicleModule } from './vehicles/app.vehicle-module';
+import { VehicleModule } from './vehicles/vehicle-module';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },

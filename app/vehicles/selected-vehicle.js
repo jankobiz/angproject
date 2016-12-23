@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var app_vehicle_1 = require("./app.vehicle");
+var vehicle_1 = require("./vehicle");
 var VehicleComponent = (function () {
     function VehicleComponent() {
         this.vehicleClicked = new core_1.EventEmitter();
@@ -48,7 +48,7 @@ var VehicleComponent = (function () {
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", typeof (_a = typeof app_vehicle_1.Vehicle !== "undefined" && app_vehicle_1.Vehicle) === "function" && _a || Object)
+    __metadata("design:type", vehicle_1.Vehicle)
 ], VehicleComponent.prototype, "vehicleselected", void 0);
 __decorate([
     core_1.Output(),
@@ -65,10 +65,9 @@ __decorate([
 VehicleComponent = __decorate([
     core_1.Component({
         selector: 'selected-vehicle',
-        templateUrl: 'app/vehicles/app.selected-vehicle.html'
+        templateUrl: 'app/vehicles/selected-vehicle.html'
     }),
     __metadata("design:paramtypes", [])
 ], VehicleComponent);
 exports.VehicleComponent = VehicleComponent;
-var _a;
-//# sourceMappingURL=app.selected-vehicle.js.map
+//# sourceMappingURL=selected-vehicle.js.map

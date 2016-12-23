@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule} from '@angular/forms';
 import { RouterModule, Routes } from  '@angular/router';
 
-import { VehicleList } from './app.vehicle-list';
-import { VehicleComponent } from './app.selected-vehicle';
-import { MyPipe } from './app.vehicle-filter.pipe';
-import { SimplePipe } from './app.simple-pipe';
+import { VehicleList } from './vehicle-list';
+import { VehicleComponent } from './selected-vehicle';
+import { MyPipe } from './vehicle-filter.pipe';
+import { SimplePipe } from './simple-pipe';
 
 //import { HighlightDirective } from '../shared/highlight.directive';
 
-import { VehicleService } from './app.vehicle-service';
+import { VehicleService } from './vehicle-service';
 
 const appRoutes: Routes = [  
   { path: 'vehicles', component: VehicleList }  

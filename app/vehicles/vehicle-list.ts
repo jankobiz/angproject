@@ -1,12 +1,12 @@
 import { Component, OnInit, Output, Input, EventEmitter, ViewChild } from '@angular/core';
-import { VehicleService } from './app.vehicle-service';
+import { VehicleService } from './vehicle-service';
 
-import { Vehicle } from './app.vehicle';
+import { Vehicle } from './vehicle';
 
 @Component ({
     selector: 'vehicle-list',
-    templateUrl: 'app/vehicles/app.vehicle-list.html',
-    styleUrls: ['./app/vehicles/app.vehicle-list.css'],    
+    templateUrl: 'app/vehicles/vehicle-list.html',
+    styleUrls: ['./app/vehicles/vehicle-list.css'],    
     providers: [VehicleService],    
 })
 

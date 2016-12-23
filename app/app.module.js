@@ -22,7 +22,7 @@ var welcome_component_1 = require("./home/welcome.component");
 //import { VehicleService } from './vehicles/app.vehicle-service';
 var highlight_directive_1 = require("./shared/highlight.directive");
 /* Feature Modules */
-var app_vehicle_module_1 = require("./vehicles/app.vehicle-module");
+var vehicle_module_1 = require("./vehicles/vehicle-module");
 var appRoutes = [
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     //{ path: 'vehicles', component: VehicleList },
@@ -41,7 +41,7 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpModule,
             router_1.RouterModule.forRoot(appRoutes),
-            app_vehicle_module_1.VehicleModule
+            vehicle_module_1.VehicleModule
         ],
         declarations: [
             app_component_1.MainApp,

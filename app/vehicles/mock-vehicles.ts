@@ -1,4 +1,4 @@
-import { Vehicle } from './app.vehicle';
+import { Vehicle } from './vehicle';
 
 export const VEHICLES: Vehicle[] = [
   {id: 1, brand: 'Mercedes', model: "E class", color: "white", price: 56000},

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var app_vehicle_service_1 = require("./app.vehicle-service");
+var vehicle_service_1 = require("./vehicle-service");
 var VehicleList = (function () {
     function VehicleList(_vehicleServis) {
         this._vehicleServis = _vehicleServis;
@@ -75,12 +75,11 @@ __decorate([
 VehicleList = __decorate([
     core_1.Component({
         selector: 'vehicle-list',
-        templateUrl: 'app/vehicles/app.vehicle-list.html',
-        styleUrls: ['./app/vehicles/app.vehicle-list.css'],
-        providers: [app_vehicle_service_1.VehicleService],
+        templateUrl: 'app/vehicles/vehicle-list.html',
+        styleUrls: ['./app/vehicles/vehicle-list.css'],
+        providers: [vehicle_service_1.VehicleService],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof app_vehicle_service_1.VehicleService !== "undefined" && app_vehicle_service_1.VehicleService) === "function" && _a || Object])
+    __metadata("design:paramtypes", [vehicle_service_1.VehicleService])
 ], VehicleList);
 exports.VehicleList = VehicleList;
-var _a;
-//# sourceMappingURL=app.vehicle-list.js.map
+//# sourceMappingURL=vehicle-list.js.map
