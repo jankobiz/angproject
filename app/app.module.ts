@@ -17,6 +17,7 @@ import { HighlightDirective } from './shared/highlight.directive';
 
 /* Feature Modules */
 import { VehicleModule } from './vehicles/vehicle-module';
+import { DealerModule } from './dealers/dealer-module';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(appRoutes),
-        VehicleModule 
+        VehicleModule,
+        DealerModule 
     ],
     declarations: [
         MainApp,

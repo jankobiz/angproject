@@ -1,0 +1,55 @@
+<h3>{{title}}</h3>
+<div>
+    <input [(ngModel)]='filterInput'>
+</div>
+<div class='row'>
+    <div class='col-md-6'>
+        <h3>Filtered by: {{filterInput}}</h3>
+    </div>
+</div>
+<p></p>
+<div>
+    <ul class="dealers">
+        <p></p>
+        <li *ngFor='let dealer of dealers | myPipe:filterInput'>
+            <div (click)="select(dealer)"
+                [class.selected]="dealer===selectedDealer">
+                {{dealer.id}}, {{dealer.brand | uppercase}}, {{dealer.model}}, {{dealer.color}}, {{dealer.price | currency: 'USD':true:'1.2-2'}}
+            </div>
+            <div style="margin-top:5px"></div>
+        </li>
+    </ul>
+    <div>
+        <h3>Life Cycle Hooks</h3>
+        <ul>
+            <li *ngFor='let hooksMessage of hooksMessages'>
+                {{hooksMessage}}
+            </li>
+        </ul>
+    </div>
+    <button (click)=remove()>Remove component</button>    
+    <div *ngIf="dealers.length">
+        <h3>You have {{dealers.length}} dealers</h3>
+    </div>
+    <selected-dealer *ngIf="selectedDealer"
+        [dealerselected]="selectedDealer"
+        (dealerClicked)='onDealerselected($event)'
+        (mouseOverButton)='onMouseOverButtonEvent($event)'
+        (onLifeCycleHookEvent)='processLifeCycleEvent($event)'
+    ></selected-dealer>
+</div>
+<p></p>
+<button
+    [style.color]="divcolor"
+    [style.background-color]="bckdivcolor"
+    (click)="log('Button clicked')"
+    (mouseleave)="log('Mouse left button')"
+    (mouseover)="log('Mouse over button')">
+    Button
+</button>
+<p></p>
+<div>
+    <ul>
+        <li *ngFor="let msg of messages">{{msg}}</li>
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+.dealers {
+  list-style-type: none;
+}
+
+*.dealers li {
+  padding: 4px;
+  cursor: pointer;
+  background-color: #eea;
+}
+
+*.dealers li .selected {
+  background-color: #ccc;  
+}
