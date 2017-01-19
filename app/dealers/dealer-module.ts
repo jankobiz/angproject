@@ -4,7 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { RouterModule, Routes } from  '@angular/router';
 import { MyPipe } from './dealer-filter.pipe';
 
-import { DealersList } from './dealers-list';
+import { DealersList } from './dealer-list';
 import { DealerComponent } from './selected-dealer';
 
 const appRoutes: Routes = [    
