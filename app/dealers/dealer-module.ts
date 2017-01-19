@@ -23,5 +23,5 @@ const appRoutes: Routes = [
 })
 
 export class DealerModule {
-
+    
 }
