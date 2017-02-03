@@ -59,7 +59,7 @@ export class DealersList {
         console.log("Clicked on a vehicle " + selectedVihacle.model);
     }
     onDealerselected(message: string) {
-        this.title = 'Dealer list: ' + message;
+        //this.title = 'Dealer list: ' + message;
         console.log('Dealer that is selected: ' + message);
     }
     onMouseOverButtonEvent(vehicleObject: Dealer) {

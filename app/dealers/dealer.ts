@@ -1,7 +1,6 @@
 export class Dealer {
     id: number;
-    brand: string;
-    model: string;
-    color: string;
-    price: number;
+    name: string;
+    state: string;    
+    revenue: number;
 }

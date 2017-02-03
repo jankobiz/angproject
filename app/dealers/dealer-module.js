@@ -13,10 +13,10 @@ var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var dealer_filter_pipe_1 = require("./dealer-filter.pipe");
-var dealers_list_1 = require("./dealers-list");
+var dealer_list_1 = require("./dealer-list");
 var selected_dealer_1 = require("./selected-dealer");
 var appRoutes = [
-    { path: 'dealers', component: dealers_list_1.DealersList }
+    { path: 'dealers', component: dealer_list_1.DealersList }
 ];
 var DealerModule = (function () {
     function DealerModule() {
@@ -30,8 +30,8 @@ DealerModule = __decorate([
             forms_1.FormsModule,
             router_1.RouterModule.forRoot(appRoutes)
         ],
-        exports: [dealers_list_1.DealersList],
-        declarations: [dealers_list_1.DealersList, selected_dealer_1.DealerComponent, dealer_filter_pipe_1.MyPipe],
+        exports: [dealer_list_1.DealersList],
+        declarations: [dealer_list_1.DealersList, selected_dealer_1.DealerComponent, dealer_filter_pipe_1.MyPipe],
         providers: []
     }),
     __metadata("design:paramtypes", [])

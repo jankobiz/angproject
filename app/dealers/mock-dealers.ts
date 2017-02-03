@@ -1,14 +1,14 @@
 import { Dealer } from './dealer';
 
 export const DEALERS: Dealer[] = [
-  {id: 1, brand: 'Mercedes', model: "E class", color: "white", price: 56000},
-  {id: 2, brand: 'Ford', model: "Mondeo", color: "blue", price: 24000},
-  {id: 3, brand: 'BMW', model: "M class", color: "red", price: 64000},
-  {id: 4, brand: 'Opel', model: "Insignia", color: "black", price: 23000},
-  {id: 5, brand: 'Hyundai', model: "Elantra", color: "silver", price: 19600},  
-  {id: 6, brand: 'Fiat', model: "500", color: "green", price: 11500},
-  {id: 7, brand: 'Skoda', model: "Octavia", color: "cyan", price: 16900},
-  {id: 8, brand: 'Volkswagen', model: "Passat", color: "magenta", price: 24500},
-  {id: 9, brand: 'Toyota', model: "Corola", color: "yellow", price: 20400},
-  {id: 10, brand: 'GMC', model: "Escalade", color: "brown", price: 45000}
+  {id: 1, name: 'Sanderson Automotive', state: "Michigan", revenue: 299917862},
+  {id: 2, name: 'Sam Pack Auto Group', state: "New York", revenue: 221984075},
+  {id: 3, name: 'World Class Automotive Group', state: "Texas", revenue: 152073819},
+  {id: 4, name: 'Galpin Motors Inc.', state: "illinois", revenue: 150466913},
+  {id: 5, name: 'Shammas Automotive Group', state: "Vermont", revenue: 147115446},
+  {id: 6, name: 'Keyes Automotive Group', state: "Main", revenue: 142515180},
+  {id: 7, name: 'Bommarito Automotive Group', state: "California", revenue: 140476469},
+  {id: 8, name: 'Fletcher Jones Automotive Group', state: "Connecticut", revenue: 133730601},
+  {id: 9, name: 'Piercey Automotive Group', state: "Colorado", revenue: 133029792},
+  {id: 10, name: 'Braman Dealerships', state: "Pennsylvania", revenue: 131819142}
 ];

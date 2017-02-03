@@ -56,7 +56,7 @@ var DealersList = (function () {
         console.log("Clicked on a vehicle " + selectedVihacle.model);
     };
     DealersList.prototype.onDealerselected = function (message) {
-        //this.title = 'Product list: ' + message;
+        //this.title = 'Dealer list: ' + message;
         console.log('Dealer that is selected: ' + message);
     };
     DealersList.prototype.onMouseOverButtonEvent = function (vehicleObject) {

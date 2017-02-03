@@ -11,26 +11,25 @@
 <div>
     <ul class="dealers">
         <p></p>
-        <li *ngFor='let dealer of dealers | myPipe:filterInput'>
+        <li style="font-weight: bold; border-bottom: solid 2px">
+            <div style="width: 250px; float: left">ID</div>
+            <div style="width: 250px; float: left">Name</div>
+            <div style="width: 250px; float: left">State</div>
+            <div style="width: 250px; float: left">Revenue</div>
+            <div style="clear: both"></div>
+        </li>
+        <li *ngFor='let dealer of dealers | myPipe:filterInput' style="margin-top:5px">
             <div (click)="select(dealer)"
                 [class.selected]="dealer===selectedDealer">
-                {{dealer.id}}, {{dealer.brand | uppercase}}, {{dealer.model}}, {{dealer.color}}, {{dealer.price | currency: 'USD':true:'1.2-2'}}
+                <div style="width: 250px; float: left">{{dealer.id}}</div>
+                <div style="width: 250px; float: left">{{dealer.name}}</div>
+                <div style="width: 250px; float: left">{{dealer.state}}</div>
+                <div style="width: 250px; float: left">{{dealer.revenue | currency: 'USD':true:'1.0-2'}}</div>
             </div>
-            <div style="margin-top:5px"></div>
+            <div style="margin-top:5px; clear: both"></div>
         </li>
-    </ul>
-    <div>
-        <h3>Life Cycle Hooks</h3>
-        <ul>
-            <li *ngFor='let hooksMessage of hooksMessages'>
-                {{hooksMessage}}
-            </li>
-        </ul>
-    </div>
-    <button (click)=remove()>Remove component</button>    
-    <div *ngIf="dealers.length">
-        <h3>You have {{dealers.length}} dealers</h3>
-    </div>
+    </ul>    
+    <button (click)=remove()>Remove component</button>
     <selected-dealer *ngIf="selectedDealer"
         [dealerselected]="selectedDealer"
         (dealerClicked)='onDealerselected($event)'
