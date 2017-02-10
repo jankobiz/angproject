@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var dealer_service_1 = require("./dealer-service");
 var DealersList = (function () {
-    function DealersList(_vehicleServis) {
-        this._vehicleServis = _vehicleServis;
+    function DealersList(_dealerServis) {
+        this._dealerServis = _dealerServis;
         this.selected = new core_1.EventEmitter();
         this.timesClicked = 0;
         this.inputtext = 'This is default text1';
@@ -23,7 +23,7 @@ var DealersList = (function () {
         this.filterInput = '';
         this.hooksMessages = [];
         this.title = 'Angular 2 Binding Events';
-        //this.dealers = this._vehicleServis.getDealers();
+        //this.dealers = this._dealerServis.getDealers();
     }
     DealersList.prototype.log = function (msg, data) {
         this.timesClicked += 1;
@@ -33,12 +33,14 @@ var DealersList = (function () {
             console.log(data);
         }
     };
-    DealersList.prototype.getVihacles = function () {
+    DealersList.prototype.getDealers = function () {
         var _this = this;
-        this._vehicleServis.getDealersPromise().then(function (dealers) { return _this.dealers = dealers; });
+        this._dealerServis.getDealersPromise().then(function (dealers) { return _this.dealers = dealers; });
     };
     DealersList.prototype.ngOnInit = function () {
-        this.dealers = this._vehicleServis.getDealers();
+        //this.dealers = this._dealerServis.getDealersOld();
+        this._dealerServis =
+        ;
     };
     DealersList.prototype.processLifeCycleEvent = function (event) {
         console.log("Life cycle hook: " + event + "!");
@@ -50,17 +52,17 @@ var DealersList = (function () {
     DealersList.prototype.onChanges = function (event) {
         console.log("Component " + event + " has changed!");
     };
-    DealersList.prototype.select = function (selectedVihacle) {
-        this.selectedDealer = selectedVihacle;
-        this.selected.emit(selectedVihacle);
-        console.log("Clicked on a vehicle " + selectedVihacle.model);
+    DealersList.prototype.select = function (selectedDealer) {
+        this.selectedDealer = selectedDealer;
+        this.selected.emit(selectedDealer);
+        console.log("Clicked on a dealer " + selectedDealer.name);
     };
     DealersList.prototype.onDealerselected = function (message) {
         //this.title = 'Dealer list: ' + message;
         console.log('Dealer that is selected: ' + message);
     };
-    DealersList.prototype.onMouseOverButtonEvent = function (vehicleObject) {
-        console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
+    DealersList.prototype.onMouseOverButtonEvent = function (dealerObject) {
+        console.log('On mouse over car dealer info ' + dealerObject.name + ' ' + dealerObject.revenue + '!');
         //this.viewChild.viewChildExample();
     };
     DealersList.prototype.remove = function () {

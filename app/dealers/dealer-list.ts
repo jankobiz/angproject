@@ -25,9 +25,9 @@ export class DealersList {
     dealers1: any;
     filterInput: string = '';
     hooksMessages: string [] = [];
-    constructor(private _vehicleServis: DealerService) {
+    constructor(private _dealerServis: DealerService) {
         this.title = 'Angular 2 Binding Events';
-        //this.dealers = this._vehicleServis.getDealers();
+        //this.dealers = this._dealerServis.getDealers();
     }
     log(msg: string, data: string){
         this.timesClicked+=1;
@@ -37,11 +37,12 @@ export class DealersList {
             console.log(data);
         }
     }
-    getVihacles (): void {
-        this._vehicleServis.getDealersPromise().then(dealers => this.dealers = dealers);
+    getDealers (): void {
+        this._dealerServis.getDealersPromise().then(dealers => this.dealers = dealers);
     }
-    ngOnInit() {
-        this.dealers = this._vehicleServis.getDealers();
+    ngOnInit(): void {
+        //this.dealers = this._dealerServis.getDealersOld();
+        this._dealerServis = 
     }
     processLifeCycleEvent(event: string) {
         console.log(`Life cycle hook: ${event}!`);
@@ -53,17 +54,17 @@ export class DealersList {
     onChanges(event: string) {
         console.log(`Component ${event} has changed!`);
     }
-    select (selectedVihacle: Dealer) {
-        this.selectedDealer=selectedVihacle;
-        this.selected.emit(selectedVihacle);
-        console.log("Clicked on a vehicle " + selectedVihacle.model);
+    select (selectedDealer: Dealer) {
+        this.selectedDealer=selectedDealer;
+        this.selected.emit(selectedDealer);
+        console.log("Clicked on a dealer " + selectedDealer.name);
     }
     onDealerselected(message: string) {
         //this.title = 'Dealer list: ' + message;
         console.log('Dealer that is selected: ' + message);
     }
-    onMouseOverButtonEvent(vehicleObject: Dealer) {
-        console.log('On mouse over car info ' + vehicleObject.brand + ' ' + vehicleObject.color + '!');
+    onMouseOverButtonEvent(dealerObject: Dealer) {
+        console.log('On mouse over car dealer info ' + dealerObject.name + ' ' + dealerObject.revenue + '!');
         //this.viewChild.viewChildExample();
     }
     remove() {

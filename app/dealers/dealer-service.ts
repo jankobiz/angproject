@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 import { Dealer } from './dealer';
 import { DEALERS } from './mock-dealers';
-
-import { Http } from '@angular/http';
 
 @Injectable()
 
 export class DealerService {
 
+    private _dealersUrl = '/api/dealers.json';
+
     constructor(private _http: Http) {
         
     }
 
-    getDealers(): Dealer[] {
+    getDealers(): Observable<Dealer[]> {
+        return this._http.get(this._dealersUrl)
+            .map((response: Response) => <Dealer[]>response.json())
+            .do(data => console.log("All: " + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+
+    getDealersOld(): Dealer[] {
         return DEALERS;
     }
 
@@ -21,9 +34,8 @@ export class DealerService {
         return Promise.resolve(DEALERS);
     }
 
-    getDealers1 = () => [
-        { id: 1, name: 'X-Wing Fighter' },
-        { id: 2, name: 'Tie Fighter' },
-        { id: 3, name: 'Y-Wing Fighter' }
-    ];
+    private handleError(error: Response) {        
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
 }
