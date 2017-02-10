@@ -16,14 +16,14 @@ export class DealerComponent implements OnChanges, OnInit, AfterViewInit, OnDest
 
     onClick() {
         console.log('H3 selected dealer has been clicked!');
-        this.dealerClicked.emit(`The dealer ${this.dealerselected.model} was clicked!`);
+        this.dealerClicked.emit(`The dealer ${this.dealerselected.name} was clicked!`);
     }
     onMouseOver() {
         console.log('Trying another event listener');
         this.mouseOverButton.emit(this.dealerselected);
     }
     viewChildExample() {
-        console.log('Viewchild example is working! You have selected ' + this.dealerselected.model);
+        console.log('Viewchild example is working! You have selected ' + this.dealerselected.name);
     }
     ngAfterViewInit() {
         console.log('This is AFTER VIEW EVENT!');
@@ -34,8 +34,8 @@ export class DealerComponent implements OnChanges, OnInit, AfterViewInit, OnDest
         this.onLifeCycleHookEvent.emit('On INIT life cycle hook!');
     }
     ngOnChanges() {
-        console.log(`New vehichle ${this.dealerselected.model} was selected!`);
-        console.log('New vehichle selected - ' + this.dealerselected.model);
+        console.log(`New vehichle ${this.dealerselected.name} was selected!`);
+        console.log('New vehichle selected - ' + this.dealerselected.name);
         this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
         //console.log('New vehichle selected!');
     }

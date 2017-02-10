@@ -18,14 +18,14 @@ var DealerComponent = (function () {
     }
     DealerComponent.prototype.onClick = function () {
         console.log('H3 selected dealer has been clicked!');
-        this.dealerClicked.emit("The dealer " + this.dealerselected.model + " was clicked!");
+        this.dealerClicked.emit("The dealer " + this.dealerselected.name + " was clicked!");
     };
     DealerComponent.prototype.onMouseOver = function () {
         console.log('Trying another event listener');
         this.mouseOverButton.emit(this.dealerselected);
     };
     DealerComponent.prototype.viewChildExample = function () {
-        console.log('Viewchild example is working! You have selected ' + this.dealerselected.model);
+        console.log('Viewchild example is working! You have selected ' + this.dealerselected.name);
     };
     DealerComponent.prototype.ngAfterViewInit = function () {
         console.log('This is AFTER VIEW EVENT!');
@@ -36,8 +36,8 @@ var DealerComponent = (function () {
         this.onLifeCycleHookEvent.emit('On INIT life cycle hook!');
     };
     DealerComponent.prototype.ngOnChanges = function () {
-        console.log("New vehichle " + this.dealerselected.model + " was selected!");
-        console.log('New vehichle selected - ' + this.dealerselected.model);
+        console.log("New vehichle " + this.dealerselected.name + " was selected!");
+        console.log('New vehichle selected - ' + this.dealerselected.name);
         this.onLifeCycleHookEvent.emit('On CHANGES life cycle hook!');
         //console.log('New vehichle selected!');
     };
