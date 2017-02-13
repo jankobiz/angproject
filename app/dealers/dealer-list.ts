@@ -25,6 +25,7 @@ export class DealersList {
     dealers1: any;
     filterInput: string = '';
     hooksMessages: string [] = [];
+    errorMessage: string;
     constructor(private _dealerServis: DealerService) {
         this.title = 'Angular 2 Binding Events';
         //this.dealers = this._dealerServis.getDealers();
@@ -42,7 +43,10 @@ export class DealersList {
     }
     ngOnInit(): void {
         //this.dealers = this._dealerServis.getDealersOld();
-        this._dealerServis = 
+        this._dealerServis.getDealers()
+            .subscribe(dealers => this.dealers = dealers,
+                       error => this.errorMessage = <any>error,
+                       () => console.log("Observable Completed!!!"));
     }
     processLifeCycleEvent(event: string) {
         console.log(`Life cycle hook: ${event}!`);

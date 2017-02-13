@@ -16,7 +16,7 @@ export class DealerService {
     private _dealersUrl = '/api/dealers.json';
 
     constructor(private _http: Http) {
-        
+
     }
 
     getDealers(): Observable<Dealer[]> {
@@ -34,7 +34,7 @@ export class DealerService {
         return Promise.resolve(DEALERS);
     }
 
-    private handleError(error: Response) {        
+    private handleError(error: Response) {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }

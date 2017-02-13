@@ -38,9 +38,10 @@ var DealersList = (function () {
         this._dealerServis.getDealersPromise().then(function (dealers) { return _this.dealers = dealers; });
     };
     DealersList.prototype.ngOnInit = function () {
+        var _this = this;
         //this.dealers = this._dealerServis.getDealersOld();
-        this._dealerServis =
-        ;
+        this._dealerServis.getDealers()
+            .subscribe(function (dealers) { return _this.dealers = dealers; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Observable Completed!!!"); });
     };
     DealersList.prototype.processLifeCycleEvent = function (event) {
         console.log("Life cycle hook: " + event + "!");
