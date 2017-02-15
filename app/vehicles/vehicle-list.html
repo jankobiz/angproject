@@ -21,8 +21,7 @@
 <div>
     <ul class="vehicles">
         <p></p>
-        <li style="font-weight: bold; border-bottom: solid 2px">
-            <div style="width: 200px; float: left">ID</div>
+        <li style="font-weight: bold; border-bottom: solid 2px">            
             <div style="width: 200px; float: left">Brand</div>
             <div style="width: 200px; float: left">Model</div>
             <div style="width: 200px; float: left">Color</div>
@@ -31,9 +30,8 @@
         </li>
         <li *ngFor='let vehicle of vehicles | myPipe:filterInput' style="margin-top:5px">
             <div (click)="select(vehicle)"
-                [class.selected]="vehicle===selectedVehicle">
-                <div style="width: 200px; float: left">{{vehicle.id}}</div>
-                <div style="width: 200px; float: left">{{vehicle.brand | uppercase}}</div>
+                [class.selected]="vehicle===selectedVehicle">                
+                <div style="width: 200px; float: left"><a [routerLink]= "['/vehicle', vehicle.id]">{{vehicle.brand | uppercase}}</a></div>
                 <div style="width: 200px; float: left">{{vehicle.model}}</div>
                 <div style="width: 200px; float: left">{{vehicle.color}}</div>
                 <div style="width: 200px; float: left">{{vehicle.price | currency: 'USD':true:'1.2-2'}}</div>

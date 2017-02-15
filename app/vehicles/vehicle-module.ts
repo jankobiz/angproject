@@ -11,19 +11,23 @@ import { SimplePipe } from './simple-pipe';
 //import { HighlightDirective } from '../shared/highlight.directive';
 
 import { VehicleService } from './vehicle-service';
+import { VehicleDetail } from './vehicle-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 const appRoutes: Routes = [  
-  { path: 'vehicles', component: VehicleList }  
+  { path: 'vehicles', component: VehicleList },
+  { path: 'vehicle/:id', component: VehicleDetail}
 ];
 
 @NgModule ({
     imports: [
         CommonModule,
         FormsModule,
+        SharedModule,
         RouterModule.forRoot(appRoutes)
     ],
     exports: [VehicleList],
-    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe],
+    declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe, VehicleDetail],
     providers: [ VehicleService ]
 })
 

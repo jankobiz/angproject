@@ -18,8 +18,11 @@ var vehicle_filter_pipe_1 = require("./vehicle-filter.pipe");
 var simple_pipe_1 = require("./simple-pipe");
 //import { HighlightDirective } from '../shared/highlight.directive';
 var vehicle_service_1 = require("./vehicle-service");
+var vehicle_details_component_1 = require("./vehicle-details.component");
+var shared_module_1 = require("../shared/shared.module");
 var appRoutes = [
-    { path: 'vehicles', component: vehicle_list_1.VehicleList }
+    { path: 'vehicles', component: vehicle_list_1.VehicleList },
+    { path: 'vehicle/:id', component: vehicle_details_component_1.VehicleDetail }
 ];
 var VehicleModule = (function () {
     function VehicleModule() {
@@ -31,10 +34,11 @@ VehicleModule = __decorate([
         imports: [
             common_1.CommonModule,
             forms_1.FormsModule,
+            shared_module_1.SharedModule,
             router_1.RouterModule.forRoot(appRoutes)
         ],
         exports: [vehicle_list_1.VehicleList],
-        declarations: [vehicle_list_1.VehicleList, vehicle_filter_pipe_1.MyPipe, selected_vehicle_1.VehicleComponent, simple_pipe_1.SimplePipe],
+        declarations: [vehicle_list_1.VehicleList, vehicle_filter_pipe_1.MyPipe, selected_vehicle_1.VehicleComponent, simple_pipe_1.SimplePipe, vehicle_details_component_1.VehicleDetail],
         providers: [vehicle_service_1.VehicleService]
     }),
     __metadata("design:paramtypes", [])
