@@ -16,7 +16,17 @@ var VehicleDetail = (function () {
         this._route = _route;
         this._router = _router;
         this._vehicleService = _vehicleService;
+        this.pageTitle = 'Vehicle Detail';
     }
+    VehicleDetail.prototype.ngOnInit = function () {
+        console.log(this._route.snapshot.params['id']);
+        console.log(this._route.snapshot.url);
+        var id = +this._route.snapshot.params['id'];
+        this.pageTitle += ": " + id;
+    };
+    VehicleDetail.prototype.onBack = function () {
+        this._router.navigate(['/vehicles']);
+    };
     return VehicleDetail;
 }());
 VehicleDetail = __decorate([

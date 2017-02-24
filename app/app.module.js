@@ -26,7 +26,6 @@ var vehicle_module_1 = require("./vehicles/vehicle-module");
 var dealer_module_1 = require("./dealers/dealer-module");
 var appRoutes = [
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
-    //{ path: 'vehicles', component: VehicleList },
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
     { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];

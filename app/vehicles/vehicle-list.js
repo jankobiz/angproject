@@ -33,12 +33,18 @@ var VehicleList = (function () {
             console.log(data);
         }
     };
-    VehicleList.prototype.getVihacles = function () {
+    VehicleList.prototype.getVehicles = function () {
+        var _this = this;
+        this._vehicleServis.getVehicles()
+            .subscribe(function (vehicles) { return _this.vehicles = vehicles.data; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Vehicle observable completed!!! "); });
+    };
+    VehicleList.prototype.getVihaclesOld = function () {
         var _this = this;
         this._vehicleServis.getVehiclesPromise().then(function (vehicles) { return _this.vehicles = vehicles; });
     };
     VehicleList.prototype.ngOnInit = function () {
-        this.vehicles = this._vehicleServis.getVehicles();
+        //this.vehicles = this._vehicleServis.getVehiclesOld();        
+        this.getVehicles();
     };
     VehicleList.prototype.processLifeCycleEvent = function (event) {
         console.log("Life cycle hook: " + event + "!");
@@ -76,8 +82,7 @@ VehicleList = __decorate([
     core_1.Component({
         selector: 'vehicle-list',
         templateUrl: 'app/vehicles/vehicle-list.html',
-        styleUrls: ['./app/vehicles/vehicle-list.css'],
-        providers: [vehicle_service_1.VehicleService],
+        styleUrls: ['./app/vehicles/vehicle-list.css']
     }),
     __metadata("design:paramtypes", [vehicle_service_1.VehicleService])
 ], VehicleList);

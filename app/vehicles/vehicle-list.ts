@@ -6,8 +6,7 @@ import { Vehicle } from './vehicle';
 @Component ({
     selector: 'vehicle-list',
     templateUrl: 'app/vehicles/vehicle-list.html',
-    styleUrls: ['./app/vehicles/vehicle-list.css'],    
-    providers: [VehicleService],    
+    styleUrls: ['./app/vehicles/vehicle-list.css']
 })
 
 export class VehicleList {
@@ -25,10 +24,12 @@ export class VehicleList {
     vehicles1: any;
     filterInput: string = '';
     hooksMessages: string [] = [];
+    errorMessage: any;
     constructor(private _vehicleServis: VehicleService) {
         this.title = 'Angular 2 Binding Events';
         //this.vehicles = this._vehicleServis.getVehicles();
     }
+    
     log(msg: string, data: string){
         this.timesClicked+=1;
         this.messages.splice(0,0, msg + " " + this.timesClicked);
@@ -37,11 +38,21 @@ export class VehicleList {
             console.log(data);
         }
     }
-    getVihacles (): void {
+
+    getVehicles(): void {
+        this._vehicleServis.getVehicles()
+            .subscribe(vehicles => this.vehicles = vehicles.data,
+                       error => this.errorMessage = <any>error,
+                       () => console.log("Vehicle observable completed!!! "));
+    }
+
+    getVihaclesOld (): void {
         this._vehicleServis.getVehiclesPromise().then(vehicles => this.vehicles = vehicles);
-    }    
+    }
+
     ngOnInit() {
-        this.vehicles = this._vehicleServis.getVehicles();
+        //this.vehicles = this._vehicleServis.getVehiclesOld();        
+        this.getVehicles();
     }
     processLifeCycleEvent(event: string) {
         console.log(`Life cycle hook: ${event}!`);

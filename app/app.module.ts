@@ -20,15 +20,13 @@ import { VehicleModule } from './vehicles/vehicle-module';
 import { DealerModule } from './dealers/dealer-module';
 
 const appRoutes: Routes = [
-  { path: 'welcome', component: WelcomeComponent },
-  //{ path: 'vehicles', component: VehicleList },
+  { path: 'welcome', component: WelcomeComponent },  
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 
-
 @NgModule ({
-    imports: [ 
+    imports: [
         BrowserModule,
         FormsModule,
         HttpModule,

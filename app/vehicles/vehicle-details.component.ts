@@ -10,9 +10,23 @@ import { VehicleService } from './vehicle-service';
 })
 
 export class VehicleDetail {
+    pageTitle: string = 'Vehicle Detail';
+    vehicle: Vehicle;
+
     constructor (private _route: ActivatedRoute,
                  private _router: Router,
                  private _vehicleService: VehicleService ) {
-
     }
+
+    ngOnInit(): void {
+        console.log(this._route.snapshot.params['id']);
+        console.log(this._route.snapshot.url);
+        let id = +this._route.snapshot.params['id'];
+        this.pageTitle += `: ${id}`;
+    }
+
+    onBack(): void {
+        this._router.navigate(['/vehicles']);
+    }
+
 }

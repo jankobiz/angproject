@@ -22,6 +22,7 @@ var DealersList = (function () {
         this.bckdivcolor = "darkred";
         this.filterInput = '';
         this.hooksMessages = [];
+        this.completedMessage = 'Message that reports completion!';
         this.title = 'Angular 2 Binding Events';
         //this.dealers = this._dealerServis.getDealers();
     }
@@ -41,7 +42,7 @@ var DealersList = (function () {
         var _this = this;
         //this.dealers = this._dealerServis.getDealersOld();
         this._dealerServis.getDealers()
-            .subscribe(function (dealers) { return _this.dealers = dealers; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Observable Completed!!!"); });
+            .subscribe(function (dealers) { return _this.dealers = dealers; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Observable Completed!!!" + _this.completedMessage); });
     };
     DealersList.prototype.processLifeCycleEvent = function (event) {
         console.log("Life cycle hook: " + event + "!");
@@ -79,8 +80,7 @@ DealersList = __decorate([
     core_1.Component({
         selector: 'dealer-list',
         templateUrl: 'app/dealers/dealer-list.html',
-        styleUrls: ['./app/dealers/dealer-list.css'],
-        providers: [dealer_service_1.DealerService],
+        styleUrls: ['./app/dealers/dealer-list.css']
     }),
     __metadata("design:paramtypes", [dealer_service_1.DealerService])
 ], DealersList);

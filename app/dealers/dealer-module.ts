@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule} from '@angular/forms';
 import { RouterModule, Routes } from  '@angular/router';
+
 import { MyPipe } from './dealer-filter.pipe';
 import { StatePipe } from './second-dealer-filter.pipe';
 
 import { DealersList } from './dealer-list';
 import { DealerComponent } from './selected-dealer';
+import { DealerService } from './dealer-service';
 
-const appRoutes: Routes = [    
+const dealerRoutes: Routes = [    
   { path: 'dealers', component: DealersList }
 ];
 
@@ -16,11 +18,11 @@ const appRoutes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forChild(dealerRoutes)
     ],
     exports: [DealersList],
     declarations: [ DealersList, DealerComponent, MyPipe, StatePipe],
-    providers: []
+    providers: [DealerService]
 })
 
 export class DealerModule {

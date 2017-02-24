@@ -1,5 +1,4 @@
 <h3>{{title}}</h3>
-
 <div>
     <input [(ngModel)]="inputtext">
 </div>
@@ -31,8 +30,8 @@
         <li *ngFor='let vehicle of vehicles | myPipe:filterInput' style="margin-top:5px">
             <div (click)="select(vehicle)"
                 [class.selected]="vehicle===selectedVehicle">                
-                <div style="width: 200px; float: left"><a [routerLink]= "['/vehicle', vehicle.id]">{{vehicle.brand | uppercase}}</a></div>
-                <div style="width: 200px; float: left">{{vehicle.model}}</div>
+                <div style="width: 200px; float: left">{{vehicle.brand | uppercase}}</div>
+                <div style="width: 200px; float: left"><a [routerLink]= "['/vehicle', vehicle.id]">{{vehicle.model}}</a></div>
                 <div style="width: 200px; float: left">{{vehicle.color}}</div>
                 <div style="width: 200px; float: left">{{vehicle.price | currency: 'USD':true:'1.2-2'}}</div>
             </div>
@@ -48,7 +47,7 @@
         </ul>
     </div>
     <button (click)=remove()>Remove component</button>    
-    <div *ngIf="vehicles.length">
+    <div *ngIf='vehicles && vehicles.length'>
         <h3>You have {{vehicles.length}} vehicles</h3>
     </div>
     <selected-vehicle *ngIf="selectedVehicle"

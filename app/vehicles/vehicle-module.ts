@@ -13,10 +13,13 @@ import { SimplePipe } from './simple-pipe';
 import { VehicleService } from './vehicle-service';
 import { VehicleDetail } from './vehicle-details.component';
 import { SharedModule } from '../shared/shared.module';
+import { VehicleDetailGuard } from './vehicle-guard.service';
 
-const appRoutes: Routes = [  
+const vehicleRoutes: Routes = [  
   { path: 'vehicles', component: VehicleList },
-  { path: 'vehicle/:id', component: VehicleDetail}
+  { path: 'vehicle/:id',
+        canActivate: [ VehicleDetailGuard ],
+        component: VehicleDetail}
 ];
 
 @NgModule ({
@@ -24,11 +27,11 @@ const appRoutes: Routes = [
         CommonModule,
         FormsModule,
         SharedModule,
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forChild(vehicleRoutes)
     ],
     exports: [VehicleList],
     declarations: [ VehicleList, MyPipe, VehicleComponent, SimplePipe, VehicleDetail],
-    providers: [ VehicleService ]
+    providers: [ VehicleService, VehicleDetailGuard ]
 })
 
 export class VehicleModule {

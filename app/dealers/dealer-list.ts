@@ -6,8 +6,7 @@ import { Dealer } from './dealer';
 @Component ({
     selector: 'dealer-list',
     templateUrl: 'app/dealers/dealer-list.html',
-    styleUrls: ['./app/dealers/dealer-list.css'],    
-    providers: [DealerService],    
+    styleUrls: ['./app/dealers/dealer-list.css']
 })
 
 export class DealersList {
@@ -26,6 +25,7 @@ export class DealersList {
     filterInput: string = '';
     hooksMessages: string [] = [];
     errorMessage: string;
+    completedMessage: string = 'Message that reports completion!';
     constructor(private _dealerServis: DealerService) {
         this.title = 'Angular 2 Binding Events';
         //this.dealers = this._dealerServis.getDealers();
@@ -46,7 +46,7 @@ export class DealersList {
         this._dealerServis.getDealers()
             .subscribe(dealers => this.dealers = dealers,
                        error => this.errorMessage = <any>error,
-                       () => console.log("Observable Completed!!!"));
+                       () => console.log("Observable Completed!!!" + this.completedMessage));
     }
     processLifeCycleEvent(event: string) {
         console.log(`Life cycle hook: ${event}!`);

@@ -20,9 +20,12 @@ var simple_pipe_1 = require("./simple-pipe");
 var vehicle_service_1 = require("./vehicle-service");
 var vehicle_details_component_1 = require("./vehicle-details.component");
 var shared_module_1 = require("../shared/shared.module");
-var appRoutes = [
+var vehicle_guard_service_1 = require("./vehicle-guard.service");
+var vehicleRoutes = [
     { path: 'vehicles', component: vehicle_list_1.VehicleList },
-    { path: 'vehicle/:id', component: vehicle_details_component_1.VehicleDetail }
+    { path: 'vehicle/:id',
+        canActivate: [vehicle_guard_service_1.VehicleDetailGuard],
+        component: vehicle_details_component_1.VehicleDetail }
 ];
 var VehicleModule = (function () {
     function VehicleModule() {
@@ -35,11 +38,11 @@ VehicleModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule,
             shared_module_1.SharedModule,
-            router_1.RouterModule.forRoot(appRoutes)
+            router_1.RouterModule.forChild(vehicleRoutes)
         ],
         exports: [vehicle_list_1.VehicleList],
         declarations: [vehicle_list_1.VehicleList, vehicle_filter_pipe_1.MyPipe, selected_vehicle_1.VehicleComponent, simple_pipe_1.SimplePipe, vehicle_details_component_1.VehicleDetail],
-        providers: [vehicle_service_1.VehicleService]
+        providers: [vehicle_service_1.VehicleService, vehicle_guard_service_1.VehicleDetailGuard]
     }),
     __metadata("design:paramtypes", [])
 ], VehicleModule);
