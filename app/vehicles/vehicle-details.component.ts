@@ -1,7 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnChanges, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { VehicleService } from './vehicle-service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 import { Vehicle } from './vehicle';
+import { VehicleService } from './vehicle-service';
 
 @Component ({
     selector: 'vehicle-details',        
@@ -9,5 +10,9 @@ import { Vehicle } from './vehicle';
 })
 
 export class VehicleDetail {
-    
+    constructor (private _route: ActivatedRoute,
+                 private _router: Router,
+                 private _vehicleService: VehicleService ) {
+
+    }
 }

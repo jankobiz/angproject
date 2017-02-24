@@ -9,8 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var vehicle_service_1 = require("./vehicle-service");
 var VehicleDetail = (function () {
-    function VehicleDetail() {
+    function VehicleDetail(_route, _router, _vehicleService) {
+        this._route = _route;
+        this._router = _router;
+        this._vehicleService = _vehicleService;
     }
     return VehicleDetail;
 }());
@@ -19,7 +24,9 @@ VehicleDetail = __decorate([
         selector: 'vehicle-details',
         templateUrl: 'app/vehicles/vehiclel-detail.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        vehicle_service_1.VehicleService])
 ], VehicleDetail);
 exports.VehicleDetail = VehicleDetail;
 //# sourceMappingURL=vehicle-details.component.js.map
