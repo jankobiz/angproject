@@ -5,8 +5,8 @@ import { Vehicle } from './vehicle';
 import { VehicleService } from './vehicle-service';
 
 @Component ({
-    selector: 'vehicle-details',        
-    templateUrl: 'app/vehicles/vehiclel-detail.component.html'      
+    selector: 'vehicle-details',
+    templateUrl: 'app/vehicles/vehiclel-detail.component.html'
 })
 
 export class VehicleDetail {
