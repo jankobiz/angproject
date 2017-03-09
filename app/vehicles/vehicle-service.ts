@@ -26,6 +26,11 @@ export class VehicleService {
             .catch(this.handleError);
     }
 
+    getVehicle(id: number): Observable<Vehicle> {
+        return this.getVehicles()
+            .map((vehicles: Vehicle[]) => vehicles.data.find(v => v.id === id));
+    }
+
     getVehiclesOld(): Vehicle[] {
         return VEHICLES;
     }

@@ -23,14 +23,17 @@ var VehicleDetail = (function () {
         console.log(this._route.snapshot.url);
         var id = +this._route.snapshot.params['id'];
         this.pageTitle += ": " + id;
+        this.getVehicle(id);
     };
     VehicleDetail.prototype.getVehicle = function (id) {
         var _this = this;
-        this._vehicleServis.getVehicle(id)
-            .subscribe(function (vehicle) { return _this.vehicle = vehicle.data; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Vehicle observable completed!!! "); });
+        this._vehicleService.getVehicle(id)
+            .subscribe(function (vehicle) { return _this.vehicle = vehicle; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Vehicle observable completed!!! "); });
     };
     VehicleDetail.prototype.onBack = function () {
         this._router.navigate(['/vehicles']);
+    };
+    VehicleDetail.prototype.onNext = function () {
     };
     return VehicleDetail;
 }());
@@ -44,4 +47,4 @@ VehicleDetail = __decorate([
         vehicle_service_1.VehicleService])
 ], VehicleDetail);
 exports.VehicleDetail = VehicleDetail;
-//# sourceMappingURL=vehicle-details.component.js.map
+//# sourceMappingURL=vehicle-detail.component.js.map
