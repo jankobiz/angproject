@@ -22,12 +22,27 @@ export class VehicleDetail {
                  private _vehicleService: VehicleService ) {
     }
 
+/*
     ngOnInit(): void {
         console.log(this._route.snapshot.params['id']);
         console.log(this._route.snapshot.url);
         let id = +this._route.snapshot.params['id'];        
         this.pageTitle += `: ${id}`;
         this.getVehicle(id);
+    }
+*/
+
+    ngOnInit(): void {
+        this.sub = this._route.params.subscribe(
+            params => {
+                let id = +params['id'];
+                this.getVehicle(id);
+            }
+        );
+    }
+
+    ngOnDestro(): void {
+        this.sub.unsubscribe();
     }
 
     getVehicle(id: number): void {
@@ -42,7 +57,10 @@ export class VehicleDetail {
     }
 
     onNext(): void {
-        
+        this._router.navigate(['/vehicle', '1']);
+        //this._router.navigateByUrl('/vehicle/10');
+        //this._router.navigate([10], { relativeTo: this._route });
+        //this._router.navigate(['/vehicle']);
     }
 
 }

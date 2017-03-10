@@ -18,12 +18,24 @@ var VehicleDetail = (function () {
         this._vehicleService = _vehicleService;
         this.pageTitle = 'Vehicle Detail';
     }
+    /*
+        ngOnInit(): void {
+            console.log(this._route.snapshot.params['id']);
+            console.log(this._route.snapshot.url);
+            let id = +this._route.snapshot.params['id'];
+            this.pageTitle += `: ${id}`;
+            this.getVehicle(id);
+        }
+    */
     VehicleDetail.prototype.ngOnInit = function () {
-        console.log(this._route.snapshot.params['id']);
-        console.log(this._route.snapshot.url);
-        var id = +this._route.snapshot.params['id'];
-        this.pageTitle += ": " + id;
-        this.getVehicle(id);
+        var _this = this;
+        this.sub = this._route.params.subscribe(function (params) {
+            var id = +params['id'];
+            _this.getVehicle(id);
+        });
+    };
+    VehicleDetail.prototype.ngOnDestro = function () {
+        this.sub.unsubscribe();
     };
     VehicleDetail.prototype.getVehicle = function (id) {
         var _this = this;
@@ -34,6 +46,10 @@ var VehicleDetail = (function () {
         this._router.navigate(['/vehicles']);
     };
     VehicleDetail.prototype.onNext = function () {
+        this._router.navigate(['/vehicle', '1']);
+        //this._router.navigateByUrl('/vehicle/10');
+        //this._router.navigate([10], { relativeTo: this._route });
+        //this._router.navigate(['/vehicle']);
     };
     return VehicleDetail;
 }());
