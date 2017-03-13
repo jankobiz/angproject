@@ -28,7 +28,6 @@ var VehicleService = (function () {
     VehicleService.prototype.getVehicles = function () {
         return this._http.get(this._vehiclesUrl)
             .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
             .catch(this.handleError);
     };
     VehicleService.prototype.getVehicle = function (id) {

@@ -17,6 +17,7 @@ var VehicleDetail = (function () {
         this._router = _router;
         this._vehicleService = _vehicleService;
         this.pageTitle = 'Vehicle Detail';
+        this.nextButtonActive = true;
     }
     /*
         ngOnInit(): void {
@@ -31,7 +32,15 @@ var VehicleDetail = (function () {
         var _this = this;
         this.sub = this._route.params.subscribe(function (params) {
             var id = +params['id'];
+            _this.nextVehicleID = id + 1;
+            console.log('Current id: ' + _this.nextVehicleID);
             _this.getVehicle(id);
+            /*if (this.vehicle.id === NaN ) {
+                console.log('No more vehicles!!!!');
+                id=1;
+                this.getVehicle(id);
+                this.nextVehicleID = id + 1;
+            }*/
         });
     };
     VehicleDetail.prototype.ngOnDestro = function () {
@@ -46,8 +55,9 @@ var VehicleDetail = (function () {
         this._router.navigate(['/vehicles']);
     };
     VehicleDetail.prototype.onNext = function () {
-        this._router.navigate(['/vehicle', '1']);
-        //this._router.navigateByUrl('/vehicle/10');
+        //this.getVehicle(this.nextVehicleID);        
+        this._router.navigate(['/vehicle', this.nextVehicleID]);
+        //this._router.navigateByUrl('/vehicle/', this.nextVehicleID.toString);
         //this._router.navigate([10], { relativeTo: this._route });
         //this._router.navigate(['/vehicle']);
     };

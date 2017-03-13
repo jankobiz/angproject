@@ -16,6 +16,8 @@ export class VehicleDetail {
     vehicle: Vehicle;
     errorMessage: string;
     private sub: Subscription;
+    nextVehicleID: number;
+    nextButtonActive: boolean = true;
 
     constructor (private _route: ActivatedRoute,
                  private _router: Router,
@@ -36,7 +38,15 @@ export class VehicleDetail {
         this.sub = this._route.params.subscribe(
             params => {
                 let id = +params['id'];
+                this.nextVehicleID = <number> id + 1;
+                console.log('Current id: ' + this.nextVehicleID);
                 this.getVehicle(id);
+                /*if (this.vehicle.id === NaN ) {
+                    console.log('No more vehicles!!!!');
+                    id=1;
+                    this.getVehicle(id);
+                    this.nextVehicleID = id + 1;
+                }*/
             }
         );
     }
@@ -57,8 +67,9 @@ export class VehicleDetail {
     }
 
     onNext(): void {
-        this._router.navigate(['/vehicle', '1']);
-        //this._router.navigateByUrl('/vehicle/10');
+        //this.getVehicle(this.nextVehicleID);        
+        this._router.navigate(['/vehicle', this.nextVehicleID]);
+        //this._router.navigateByUrl('/vehicle/', this.nextVehicleID.toString);
         //this._router.navigate([10], { relativeTo: this._route });
         //this._router.navigate(['/vehicle']);
     }
