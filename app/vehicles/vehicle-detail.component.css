@@ -1,0 +1,19 @@
+.vehicles {
+  list-style-type: none;
+}
+
+*.vehicles li {
+  padding: 4px;
+  cursor: pointer;
+  background-color: #eea;
+}
+
+*.vehicles li .selected {
+  background-color: #ccc;  
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}

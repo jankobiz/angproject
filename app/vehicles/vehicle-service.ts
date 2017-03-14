@@ -21,7 +21,7 @@ export class VehicleService {
 
     getVehicles(): Observable<Vehicle[]> {
         return this._http.get(this._vehiclesUrl)
-            .map((response: Response) => <Vehicle[]>response.json())            
+            .map((response: Response) => <Vehicle[]>response.json())
             //.do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
     }
