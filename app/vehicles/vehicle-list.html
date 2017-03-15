@@ -20,11 +20,12 @@
 <div>
     <ul class="vehicles">
         <p></p>
-        <li style="font-weight: bold; border-bottom: solid 2px">            
+        <li style="font-weight: bold; border-bottom: solid 2px">
             <div style="width: 200px; float: left">Brand</div>
             <div style="width: 200px; float: left">Model</div>
             <div style="width: 200px; float: left">Color</div>
             <div style="width: 200px; float: left">Price</div>
+            <div style="width: 200px; float: left">Rating</div>
             <div style="clear: both"></div>
         </li>
         <li *ngFor='let vehicle of vehicles | myPipe:filterInput' style="margin-top:5px">
@@ -34,6 +35,12 @@
                 <div style="width: 200px; float: left"><a [routerLink]= "['/vehicle', vehicle.id]">{{vehicle.model}}</a></div>
                 <div style="width: 200px; float: left">{{vehicle.color}}</div>
                 <div style="width: 200px; float: left">{{vehicle.price | currency: 'USD':true:'1.2-2'}}</div>
+                <div style="width: 200px; float: left">
+                    <ai-star [rating]="vehicle.starRating"
+                             (ratingClicked)='onRatingClicked($event)'>
+
+                    </ai-star>
+                </div>
             </div>
             <div style="margin-top:5px; clear: both"></div>
         </li>

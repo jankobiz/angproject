@@ -80,4 +80,8 @@ export class VehicleList {
     remove() {
         this.selectedVehicle = null;
     }
+
+    onRatingClicked(message: string): void {
+        console.log("On rating clicked " + message);
+    }
 }

@@ -28,8 +28,11 @@ var VehicleService = (function () {
     VehicleService.prototype.getVehicles = function () {
         return this._http.get(this._vehiclesUrl)
             .map(function (response) { return response.json(); })
-            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
             .catch(this.handleError);
+    };
+    VehicleService.prototype.getVehicle = function (id) {
+        return this.getVehicles()
+            .map(function (vehicles) { return vehicles.data.find(function (v) { return v.id === id; }); });
     };
     VehicleService.prototype.getVehiclesOld = function () {
         return mock_vehicles_1.VEHICLES;

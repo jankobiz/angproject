@@ -24,6 +24,11 @@ var VehicleDetail = (function () {
         var id = +this._route.snapshot.params['id'];
         this.pageTitle += ": " + id;
     };
+    VehicleDetail.prototype.getVehicle = function (id) {
+        var _this = this;
+        this._vehicleServis.getVehicle(id)
+            .subscribe(function (vehicle) { return _this.vehicle = vehicle.data; }, function (error) { return _this.errorMessage = error; }, function () { return console.log("Vehicle observable completed!!! "); });
+    };
     VehicleDetail.prototype.onBack = function () {
         this._router.navigate(['/vehicles']);
     };

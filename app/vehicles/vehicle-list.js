@@ -72,6 +72,9 @@ var VehicleList = (function () {
     VehicleList.prototype.remove = function () {
         this.selectedVehicle = null;
     };
+    VehicleList.prototype.onRatingClicked = function (message) {
+        console.log("On rating clicked " + message);
+    };
     return VehicleList;
 }());
 __decorate([

@@ -11,7 +11,7 @@ import { SimplePipe } from './simple-pipe';
 //import { HighlightDirective } from '../shared/highlight.directive';
 
 import { VehicleService } from './vehicle-service';
-import { VehicleDetail } from './vehicle-details.component';
+import { VehicleDetail } from './vehicle-detail.component';
 import { SharedModule } from '../shared/shared.module';
 import { VehicleDetailGuard } from './vehicle-guard.service';
 

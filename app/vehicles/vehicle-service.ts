@@ -22,8 +22,13 @@ export class VehicleService {
     getVehicles(): Observable<Vehicle[]> {
         return this._http.get(this._vehiclesUrl)
             .map((response: Response) => <Vehicle[]>response.json())
-            .do(data => console.log('All: ' +  JSON.stringify(data)))
+            //.do(data => console.log('All: ' +  JSON.stringify(data)))
             .catch(this.handleError);
+    }
+
+    getVehicle(id: number): Observable<Vehicle> {
+        return this.getVehicles()
+            .map((vehicles: Vehicle[]) => vehicles.data.find(v => v.id === id));
     }
 
     getVehiclesOld(): Vehicle[] {
