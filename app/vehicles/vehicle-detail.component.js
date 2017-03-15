@@ -19,7 +19,7 @@ var VehicleDetail = (function () {
         this.pageTitle = 'Vehicle Detail';
         this.prevVehicleID = 0;
         this.nextButtonActive = true;
-        this.avaliabilityChecked = false;
+        this.avaliabilityChecked = 0;
     }
     /*
         ngOnInit(): void {
@@ -32,7 +32,7 @@ var VehicleDetail = (function () {
     */
     VehicleDetail.prototype.ngOnInit = function () {
         var _this = this;
-        this.avaliabilityChecked = false;
+        this.avaliabilityChecked++;
         this.sub = this._route.params.subscribe(function (params) {
             var id = +params['id'];
             _this.nextVehicleID = id;

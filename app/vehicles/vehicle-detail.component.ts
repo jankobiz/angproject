@@ -21,7 +21,7 @@ export class VehicleDetail {
     private  prevVehicleID: number = 0;
     private  nextButtonActive: boolean = true;
     private  prevButtonActive: boolean;
-    private  avaliabilityChecked: boolean = false;
+    private  avaliabilityChecked: number = 0;
 
     constructor (private _route: ActivatedRoute,
                  private _router: Router,
@@ -39,7 +39,7 @@ export class VehicleDetail {
 */
 
     ngOnInit(): void {
-        this.avaliabilityChecked = false;
+        this.avaliabilityChecked++;
         this.sub = this._route.params.subscribe(
             params => {
                 let id = +params['id'];
